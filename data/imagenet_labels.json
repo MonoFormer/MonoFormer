@@ -1,0 +1,5354 @@
+{
+    "n01440764": {
+        "label": "tench",
+        "second_labels": [
+            "Tinca tinca"
+        ]
+    },
+    "n01443537": {
+        "label": "goldfish",
+        "second_labels": [
+            "Carassius auratus"
+        ]
+    },
+    "n01484850": {
+        "label": "great white shark",
+        "second_labels": [
+            "white shark",
+            "man-eater",
+            "man-eating shark",
+            "Carcharodon carcharias"
+        ]
+    },
+    "n01491361": {
+        "label": "tiger shark",
+        "second_labels": [
+            "Galeocerdo cuvieri"
+        ]
+    },
+    "n01494475": {
+        "label": "hammerhead",
+        "second_labels": [
+            "hammerhead shark"
+        ]
+    },
+    "n01496331": {
+        "label": "electric ray",
+        "second_labels": [
+            "crampfish",
+            "numbfish",
+            "torpedo"
+        ]
+    },
+    "n01498041": {
+        "label": "stingray",
+        "second_labels": []
+    },
+    "n01514668": {
+        "label": "cock",
+        "second_labels": []
+    },
+    "n01514859": {
+        "label": "hen",
+        "second_labels": []
+    },
+    "n01518878": {
+        "label": "ostrich",
+        "second_labels": [
+            "Struthio camelus"
+        ]
+    },
+    "n01530575": {
+        "label": "brambling",
+        "second_labels": [
+            "Fringilla montifringilla"
+        ]
+    },
+    "n01531178": {
+        "label": "goldfinch",
+        "second_labels": [
+            "Carduelis carduelis"
+        ]
+    },
+    "n01532829": {
+        "label": "house finch",
+        "second_labels": [
+            "linnet",
+            "Carpodacus mexicanus"
+        ]
+    },
+    "n01534433": {
+        "label": "junco",
+        "second_labels": [
+            "snowbird"
+        ]
+    },
+    "n01537544": {
+        "label": "indigo bunting",
+        "second_labels": [
+            "indigo finch",
+            "indigo bird",
+            "Passerina cyanea"
+        ]
+    },
+    "n01558993": {
+        "label": "robin",
+        "second_labels": [
+            "American robin",
+            "Turdus migratorius"
+        ]
+    },
+    "n01560419": {
+        "label": "bulbul",
+        "second_labels": []
+    },
+    "n01580077": {
+        "label": "jay",
+        "second_labels": []
+    },
+    "n01582220": {
+        "label": "magpie",
+        "second_labels": []
+    },
+    "n01592084": {
+        "label": "chickadee",
+        "second_labels": []
+    },
+    "n01601694": {
+        "label": "water ouzel",
+        "second_labels": [
+            "dipper"
+        ]
+    },
+    "n01608432": {
+        "label": "kite",
+        "second_labels": []
+    },
+    "n01614925": {
+        "label": "bald eagle",
+        "second_labels": [
+            "American eagle",
+            "Haliaeetus leucocephalus"
+        ]
+    },
+    "n01616318": {
+        "label": "vulture",
+        "second_labels": []
+    },
+    "n01622779": {
+        "label": "great grey owl",
+        "second_labels": [
+            "great gray owl",
+            "Strix nebulosa"
+        ]
+    },
+    "n01629819": {
+        "label": "European fire salamander",
+        "second_labels": [
+            "Salamandra salamandra"
+        ]
+    },
+    "n01630670": {
+        "label": "common newt",
+        "second_labels": [
+            "Triturus vulgaris"
+        ]
+    },
+    "n01631663": {
+        "label": "eft",
+        "second_labels": []
+    },
+    "n01632458": {
+        "label": "spotted salamander",
+        "second_labels": [
+            "Ambystoma maculatum"
+        ]
+    },
+    "n01632777": {
+        "label": "axolotl",
+        "second_labels": [
+            "mud puppy",
+            "Ambystoma mexicanum"
+        ]
+    },
+    "n01641577": {
+        "label": "bullfrog",
+        "second_labels": [
+            "Rana catesbeiana"
+        ]
+    },
+    "n01644373": {
+        "label": "tree frog",
+        "second_labels": [
+            "tree-frog"
+        ]
+    },
+    "n01644900": {
+        "label": "tailed frog",
+        "second_labels": [
+            "bell toad",
+            "ribbed toad",
+            "tailed toad",
+            "Ascaphus trui"
+        ]
+    },
+    "n01664065": {
+        "label": "loggerhead",
+        "second_labels": [
+            "loggerhead turtle",
+            "Caretta caretta"
+        ]
+    },
+    "n01665541": {
+        "label": "leatherback turtle",
+        "second_labels": [
+            "leatherback",
+            "leathery turtle",
+            "Dermochelys coriacea"
+        ]
+    },
+    "n01667114": {
+        "label": "mud turtle",
+        "second_labels": []
+    },
+    "n01667778": {
+        "label": "terrapin",
+        "second_labels": []
+    },
+    "n01669191": {
+        "label": "box turtle",
+        "second_labels": [
+            "box tortoise"
+        ]
+    },
+    "n01675722": {
+        "label": "banded gecko",
+        "second_labels": []
+    },
+    "n01677366": {
+        "label": "common iguana",
+        "second_labels": [
+            "iguana",
+            "Iguana iguana"
+        ]
+    },
+    "n01682714": {
+        "label": "American chameleon",
+        "second_labels": [
+            "anole",
+            "Anolis carolinensis"
+        ]
+    },
+    "n01685808": {
+        "label": "whiptail",
+        "second_labels": [
+            "whiptail lizard"
+        ]
+    },
+    "n01687978": {
+        "label": "agama",
+        "second_labels": []
+    },
+    "n01688243": {
+        "label": "frilled lizard",
+        "second_labels": [
+            "Chlamydosaurus kingi"
+        ]
+    },
+    "n01689811": {
+        "label": "alligator lizard",
+        "second_labels": []
+    },
+    "n01692333": {
+        "label": "Gila monster",
+        "second_labels": [
+            "Heloderma suspectum"
+        ]
+    },
+    "n01693334": {
+        "label": "green lizard",
+        "second_labels": [
+            "Lacerta viridis"
+        ]
+    },
+    "n01694178": {
+        "label": "African chameleon",
+        "second_labels": [
+            "Chamaeleo chamaeleon"
+        ]
+    },
+    "n01695060": {
+        "label": "Komodo dragon",
+        "second_labels": [
+            "Komodo lizard",
+            "dragon lizard",
+            "giant lizard",
+            "Varanus komodoensis"
+        ]
+    },
+    "n01697457": {
+        "label": "African crocodile",
+        "second_labels": [
+            "Nile crocodile",
+            "Crocodylus niloticus"
+        ]
+    },
+    "n01698640": {
+        "label": "American alligator",
+        "second_labels": [
+            "Alligator mississipiensis"
+        ]
+    },
+    "n01704323": {
+        "label": "triceratops",
+        "second_labels": []
+    },
+    "n01728572": {
+        "label": "thunder snake",
+        "second_labels": [
+            "worm snake",
+            "Carphophis amoenus"
+        ]
+    },
+    "n01728920": {
+        "label": "ringneck snake",
+        "second_labels": [
+            "ring-necked snake",
+            "ring snake"
+        ]
+    },
+    "n01729322": {
+        "label": "hognose snake",
+        "second_labels": [
+            "puff adder",
+            "sand viper"
+        ]
+    },
+    "n01729977": {
+        "label": "green snake",
+        "second_labels": [
+            "grass snake"
+        ]
+    },
+    "n01734418": {
+        "label": "king snake",
+        "second_labels": [
+            "kingsnake"
+        ]
+    },
+    "n01735189": {
+        "label": "garter snake",
+        "second_labels": [
+            "grass snake"
+        ]
+    },
+    "n01737021": {
+        "label": "water snake",
+        "second_labels": []
+    },
+    "n01739381": {
+        "label": "vine snake",
+        "second_labels": []
+    },
+    "n01740131": {
+        "label": "night snake",
+        "second_labels": [
+            "Hypsiglena torquata"
+        ]
+    },
+    "n01742172": {
+        "label": "boa constrictor",
+        "second_labels": [
+            "Constrictor constrictor"
+        ]
+    },
+    "n01744401": {
+        "label": "rock python",
+        "second_labels": [
+            "rock snake",
+            "Python sebae"
+        ]
+    },
+    "n01748264": {
+        "label": "Indian cobra",
+        "second_labels": [
+            "Naja naja"
+        ]
+    },
+    "n01749939": {
+        "label": "green mamba",
+        "second_labels": []
+    },
+    "n01751748": {
+        "label": "sea snake",
+        "second_labels": []
+    },
+    "n01753488": {
+        "label": "horned viper",
+        "second_labels": [
+            "cerastes",
+            "sand viper",
+            "horned asp",
+            "Cerastes cornutus"
+        ]
+    },
+    "n01755581": {
+        "label": "diamondback",
+        "second_labels": [
+            "diamondback rattlesnake",
+            "Crotalus adamanteus"
+        ]
+    },
+    "n01756291": {
+        "label": "sidewinder",
+        "second_labels": [
+            "horned rattlesnake",
+            "Crotalus cerastes"
+        ]
+    },
+    "n01768244": {
+        "label": "trilobite",
+        "second_labels": []
+    },
+    "n01770081": {
+        "label": "harvestman",
+        "second_labels": [
+            "daddy longlegs",
+            "Phalangium opilio"
+        ]
+    },
+    "n01770393": {
+        "label": "scorpion",
+        "second_labels": []
+    },
+    "n01773157": {
+        "label": "black and gold garden spider",
+        "second_labels": [
+            "Argiope aurantia"
+        ]
+    },
+    "n01773549": {
+        "label": "barn spider",
+        "second_labels": [
+            "Araneus cavaticus"
+        ]
+    },
+    "n01773797": {
+        "label": "garden spider",
+        "second_labels": [
+            "Aranea diademata"
+        ]
+    },
+    "n01774384": {
+        "label": "black widow",
+        "second_labels": [
+            "Latrodectus mactans"
+        ]
+    },
+    "n01774750": {
+        "label": "tarantula",
+        "second_labels": []
+    },
+    "n01775062": {
+        "label": "wolf spider",
+        "second_labels": [
+            "hunting spider"
+        ]
+    },
+    "n01776313": {
+        "label": "tick",
+        "second_labels": []
+    },
+    "n01784675": {
+        "label": "centipede",
+        "second_labels": []
+    },
+    "n01795545": {
+        "label": "black grouse",
+        "second_labels": []
+    },
+    "n01796340": {
+        "label": "ptarmigan",
+        "second_labels": []
+    },
+    "n01797886": {
+        "label": "ruffed grouse",
+        "second_labels": [
+            "partridge",
+            "Bonasa umbellus"
+        ]
+    },
+    "n01798484": {
+        "label": "prairie chicken",
+        "second_labels": [
+            "prairie grouse",
+            "prairie fowl"
+        ]
+    },
+    "n01806143": {
+        "label": "peacock",
+        "second_labels": []
+    },
+    "n01806567": {
+        "label": "quail",
+        "second_labels": []
+    },
+    "n01807496": {
+        "label": "partridge",
+        "second_labels": []
+    },
+    "n01817953": {
+        "label": "African grey",
+        "second_labels": [
+            "African gray",
+            "Psittacus erithacus"
+        ]
+    },
+    "n01818515": {
+        "label": "macaw",
+        "second_labels": []
+    },
+    "n01819313": {
+        "label": "sulphur-crested cockatoo",
+        "second_labels": [
+            "Kakatoe galerita",
+            "Cacatua galerita"
+        ]
+    },
+    "n01820546": {
+        "label": "lorikeet",
+        "second_labels": []
+    },
+    "n01824575": {
+        "label": "coucal",
+        "second_labels": []
+    },
+    "n01828970": {
+        "label": "bee eater",
+        "second_labels": []
+    },
+    "n01829413": {
+        "label": "hornbill",
+        "second_labels": []
+    },
+    "n01833805": {
+        "label": "hummingbird",
+        "second_labels": []
+    },
+    "n01843065": {
+        "label": "jacamar",
+        "second_labels": []
+    },
+    "n01843383": {
+        "label": "toucan",
+        "second_labels": []
+    },
+    "n01847000": {
+        "label": "drake",
+        "second_labels": []
+    },
+    "n01855032": {
+        "label": "red-breasted merganser",
+        "second_labels": [
+            "Mergus serrator"
+        ]
+    },
+    "n01855672": {
+        "label": "goose",
+        "second_labels": []
+    },
+    "n01860187": {
+        "label": "black swan",
+        "second_labels": [
+            "Cygnus atratus"
+        ]
+    },
+    "n01871265": {
+        "label": "tusker",
+        "second_labels": []
+    },
+    "n01872401": {
+        "label": "echidna",
+        "second_labels": [
+            "spiny anteater",
+            "anteater"
+        ]
+    },
+    "n01873310": {
+        "label": "platypus",
+        "second_labels": [
+            "duckbill",
+            "duckbilled platypus",
+            "duck-billed platypus",
+            "Ornithorhynchus anatinus"
+        ]
+    },
+    "n01877812": {
+        "label": "wallaby",
+        "second_labels": [
+            "brush kangaroo"
+        ]
+    },
+    "n01882714": {
+        "label": "koala",
+        "second_labels": [
+            "koala bear",
+            "kangaroo bear",
+            "native bear",
+            "Phascolarctos cinereus"
+        ]
+    },
+    "n01883070": {
+        "label": "wombat",
+        "second_labels": []
+    },
+    "n01910747": {
+        "label": "jellyfish",
+        "second_labels": []
+    },
+    "n01914609": {
+        "label": "sea anemone",
+        "second_labels": [
+            "anemone"
+        ]
+    },
+    "n01917289": {
+        "label": "brain coral",
+        "second_labels": []
+    },
+    "n01924916": {
+        "label": "flatworm",
+        "second_labels": [
+            "platyhelminth"
+        ]
+    },
+    "n01930112": {
+        "label": "nematode",
+        "second_labels": [
+            "nematode worm",
+            "roundworm"
+        ]
+    },
+    "n01943899": {
+        "label": "conch",
+        "second_labels": []
+    },
+    "n01944390": {
+        "label": "snail",
+        "second_labels": []
+    },
+    "n01945685": {
+        "label": "slug",
+        "second_labels": []
+    },
+    "n01950731": {
+        "label": "sea slug",
+        "second_labels": [
+            "nudibranch"
+        ]
+    },
+    "n01955084": {
+        "label": "chiton",
+        "second_labels": [
+            "coat-of-mail shell",
+            "sea cradle",
+            "polyplacophore"
+        ]
+    },
+    "n01968897": {
+        "label": "chambered nautilus",
+        "second_labels": [
+            "pearly nautilus",
+            "nautilus"
+        ]
+    },
+    "n01978287": {
+        "label": "Dungeness crab",
+        "second_labels": [
+            "Cancer magister"
+        ]
+    },
+    "n01978455": {
+        "label": "rock crab",
+        "second_labels": [
+            "Cancer irroratus"
+        ]
+    },
+    "n01980166": {
+        "label": "fiddler crab",
+        "second_labels": []
+    },
+    "n01981276": {
+        "label": "king crab",
+        "second_labels": [
+            "Alaska crab",
+            "Alaskan king crab",
+            "Alaska king crab",
+            "Paralithodes camtschatica"
+        ]
+    },
+    "n01983481": {
+        "label": "American lobster",
+        "second_labels": [
+            "Northern lobster",
+            "Maine lobster",
+            "Homarus americanus"
+        ]
+    },
+    "n01984695": {
+        "label": "spiny lobster",
+        "second_labels": [
+            "langouste",
+            "rock lobster",
+            "crawfish",
+            "crayfish",
+            "sea crawfish"
+        ]
+    },
+    "n01985128": {
+        "label": "crayfish",
+        "second_labels": [
+            "crawfish",
+            "crawdad",
+            "crawdaddy"
+        ]
+    },
+    "n01986214": {
+        "label": "hermit crab",
+        "second_labels": []
+    },
+    "n01990800": {
+        "label": "isopod",
+        "second_labels": []
+    },
+    "n02002556": {
+        "label": "white stork",
+        "second_labels": [
+            "Ciconia ciconia"
+        ]
+    },
+    "n02002724": {
+        "label": "black stork",
+        "second_labels": [
+            "Ciconia nigra"
+        ]
+    },
+    "n02006656": {
+        "label": "spoonbill",
+        "second_labels": []
+    },
+    "n02007558": {
+        "label": "flamingo",
+        "second_labels": []
+    },
+    "n02009229": {
+        "label": "little blue heron",
+        "second_labels": [
+            "Egretta caerulea"
+        ]
+    },
+    "n02009912": {
+        "label": "American egret",
+        "second_labels": [
+            "great white heron",
+            "Egretta albus"
+        ]
+    },
+    "n02011460": {
+        "label": "bittern",
+        "second_labels": []
+    },
+    "n02012849": {
+        "label": "crane",
+        "second_labels": []
+    },
+    "n02013706": {
+        "label": "limpkin",
+        "second_labels": [
+            "Aramus pictus"
+        ]
+    },
+    "n02017213": {
+        "label": "European gallinule",
+        "second_labels": [
+            "Porphyrio porphyrio"
+        ]
+    },
+    "n02018207": {
+        "label": "American coot",
+        "second_labels": [
+            "marsh hen",
+            "mud hen",
+            "water hen",
+            "Fulica americana"
+        ]
+    },
+    "n02018795": {
+        "label": "bustard",
+        "second_labels": []
+    },
+    "n02025239": {
+        "label": "ruddy turnstone",
+        "second_labels": [
+            "Arenaria interpres"
+        ]
+    },
+    "n02027492": {
+        "label": "red-backed sandpiper",
+        "second_labels": [
+            "dunlin",
+            "Erolia alpina"
+        ]
+    },
+    "n02028035": {
+        "label": "redshank",
+        "second_labels": [
+            "Tringa totanus"
+        ]
+    },
+    "n02033041": {
+        "label": "dowitcher",
+        "second_labels": []
+    },
+    "n02037110": {
+        "label": "oystercatcher",
+        "second_labels": [
+            "oyster catcher"
+        ]
+    },
+    "n02051845": {
+        "label": "pelican",
+        "second_labels": []
+    },
+    "n02056570": {
+        "label": "king penguin",
+        "second_labels": [
+            "Aptenodytes patagonica"
+        ]
+    },
+    "n02058221": {
+        "label": "albatross",
+        "second_labels": [
+            "mollymawk"
+        ]
+    },
+    "n02066245": {
+        "label": "grey whale",
+        "second_labels": [
+            "gray whale",
+            "devilfish",
+            "Eschrichtius gibbosus",
+            "Eschrichtius robustus"
+        ]
+    },
+    "n02071294": {
+        "label": "killer whale",
+        "second_labels": [
+            "killer",
+            "orca",
+            "grampus",
+            "sea wolf",
+            "Orcinus orca"
+        ]
+    },
+    "n02074367": {
+        "label": "dugong",
+        "second_labels": [
+            "Dugong dugon"
+        ]
+    },
+    "n02077923": {
+        "label": "sea lion",
+        "second_labels": []
+    },
+    "n02085620": {
+        "label": "Chihuahua",
+        "second_labels": []
+    },
+    "n02085782": {
+        "label": "Japanese spaniel",
+        "second_labels": []
+    },
+    "n02085936": {
+        "label": "Maltese dog",
+        "second_labels": [
+            "Maltese terrier",
+            "Maltese"
+        ]
+    },
+    "n02086079": {
+        "label": "Pekinese",
+        "second_labels": [
+            "Pekingese",
+            "Peke"
+        ]
+    },
+    "n02086240": {
+        "label": "Shih-Tzu",
+        "second_labels": []
+    },
+    "n02086646": {
+        "label": "Blenheim spaniel",
+        "second_labels": []
+    },
+    "n02086910": {
+        "label": "papillon",
+        "second_labels": []
+    },
+    "n02087046": {
+        "label": "toy terrier",
+        "second_labels": []
+    },
+    "n02087394": {
+        "label": "Rhodesian ridgeback",
+        "second_labels": []
+    },
+    "n02088094": {
+        "label": "Afghan hound",
+        "second_labels": [
+            "Afghan"
+        ]
+    },
+    "n02088238": {
+        "label": "basset",
+        "second_labels": [
+            "basset hound"
+        ]
+    },
+    "n02088364": {
+        "label": "beagle",
+        "second_labels": []
+    },
+    "n02088466": {
+        "label": "bloodhound",
+        "second_labels": [
+            "sleuthhound"
+        ]
+    },
+    "n02088632": {
+        "label": "bluetick",
+        "second_labels": []
+    },
+    "n02089078": {
+        "label": "black-and-tan coonhound",
+        "second_labels": []
+    },
+    "n02089867": {
+        "label": "Walker hound",
+        "second_labels": [
+            "Walker foxhound"
+        ]
+    },
+    "n02089973": {
+        "label": "English foxhound",
+        "second_labels": []
+    },
+    "n02090379": {
+        "label": "redbone",
+        "second_labels": []
+    },
+    "n02090622": {
+        "label": "borzoi",
+        "second_labels": [
+            "Russian wolfhound"
+        ]
+    },
+    "n02090721": {
+        "label": "Irish wolfhound",
+        "second_labels": []
+    },
+    "n02091032": {
+        "label": "Italian greyhound",
+        "second_labels": []
+    },
+    "n02091134": {
+        "label": "whippet",
+        "second_labels": []
+    },
+    "n02091244": {
+        "label": "Ibizan hound",
+        "second_labels": [
+            "Ibizan Podenco"
+        ]
+    },
+    "n02091467": {
+        "label": "Norwegian elkhound",
+        "second_labels": [
+            "elkhound"
+        ]
+    },
+    "n02091635": {
+        "label": "otterhound",
+        "second_labels": [
+            "otter hound"
+        ]
+    },
+    "n02091831": {
+        "label": "Saluki",
+        "second_labels": [
+            "gazelle hound"
+        ]
+    },
+    "n02092002": {
+        "label": "Scottish deerhound",
+        "second_labels": [
+            "deerhound"
+        ]
+    },
+    "n02092339": {
+        "label": "Weimaraner",
+        "second_labels": []
+    },
+    "n02093256": {
+        "label": "Staffordshire bullterrier",
+        "second_labels": [
+            "Staffordshire bull terrier"
+        ]
+    },
+    "n02093428": {
+        "label": "American Staffordshire terrier",
+        "second_labels": [
+            "Staffordshire terrier",
+            "American pit bull terrier",
+            "pit bull terrier"
+        ]
+    },
+    "n02093647": {
+        "label": "Bedlington terrier",
+        "second_labels": []
+    },
+    "n02093754": {
+        "label": "Border terrier",
+        "second_labels": []
+    },
+    "n02093859": {
+        "label": "Kerry blue terrier",
+        "second_labels": []
+    },
+    "n02093991": {
+        "label": "Irish terrier",
+        "second_labels": []
+    },
+    "n02094114": {
+        "label": "Norfolk terrier",
+        "second_labels": []
+    },
+    "n02094258": {
+        "label": "Norwich terrier",
+        "second_labels": []
+    },
+    "n02094433": {
+        "label": "Yorkshire terrier",
+        "second_labels": []
+    },
+    "n02095314": {
+        "label": "wire-haired fox terrier",
+        "second_labels": []
+    },
+    "n02095570": {
+        "label": "Lakeland terrier",
+        "second_labels": []
+    },
+    "n02095889": {
+        "label": "Sealyham terrier",
+        "second_labels": [
+            "Sealyham"
+        ]
+    },
+    "n02096051": {
+        "label": "Airedale",
+        "second_labels": [
+            "Airedale terrier"
+        ]
+    },
+    "n02096177": {
+        "label": "cairn",
+        "second_labels": [
+            "cairn terrier"
+        ]
+    },
+    "n02096294": {
+        "label": "Australian terrier",
+        "second_labels": []
+    },
+    "n02096437": {
+        "label": "Dandie Dinmont",
+        "second_labels": [
+            "Dandie Dinmont terrier"
+        ]
+    },
+    "n02096585": {
+        "label": "Boston bull",
+        "second_labels": [
+            "Boston terrier"
+        ]
+    },
+    "n02097047": {
+        "label": "miniature schnauzer",
+        "second_labels": []
+    },
+    "n02097130": {
+        "label": "giant schnauzer",
+        "second_labels": []
+    },
+    "n02097209": {
+        "label": "standard schnauzer",
+        "second_labels": []
+    },
+    "n02097298": {
+        "label": "Scotch terrier",
+        "second_labels": [
+            "Scottish terrier",
+            "Scottie"
+        ]
+    },
+    "n02097474": {
+        "label": "Tibetan terrier",
+        "second_labels": [
+            "chrysanthemum dog"
+        ]
+    },
+    "n02097658": {
+        "label": "silky terrier",
+        "second_labels": [
+            "Sydney silky"
+        ]
+    },
+    "n02098105": {
+        "label": "soft-coated wheaten terrier",
+        "second_labels": []
+    },
+    "n02098286": {
+        "label": "West Highland white terrier",
+        "second_labels": []
+    },
+    "n02098413": {
+        "label": "Lhasa",
+        "second_labels": [
+            "Lhasa apso"
+        ]
+    },
+    "n02099267": {
+        "label": "flat-coated retriever",
+        "second_labels": []
+    },
+    "n02099429": {
+        "label": "curly-coated retriever",
+        "second_labels": []
+    },
+    "n02099601": {
+        "label": "golden retriever",
+        "second_labels": []
+    },
+    "n02099712": {
+        "label": "Labrador retriever",
+        "second_labels": []
+    },
+    "n02099849": {
+        "label": "Chesapeake Bay retriever",
+        "second_labels": []
+    },
+    "n02100236": {
+        "label": "German short-haired pointer",
+        "second_labels": []
+    },
+    "n02100583": {
+        "label": "vizsla",
+        "second_labels": [
+            "Hungarian pointer"
+        ]
+    },
+    "n02100735": {
+        "label": "English setter",
+        "second_labels": []
+    },
+    "n02100877": {
+        "label": "Irish setter",
+        "second_labels": [
+            "red setter"
+        ]
+    },
+    "n02101006": {
+        "label": "Gordon setter",
+        "second_labels": []
+    },
+    "n02101388": {
+        "label": "Brittany spaniel",
+        "second_labels": []
+    },
+    "n02101556": {
+        "label": "clumber",
+        "second_labels": [
+            "clumber spaniel"
+        ]
+    },
+    "n02102040": {
+        "label": "English springer",
+        "second_labels": [
+            "English springer spaniel"
+        ]
+    },
+    "n02102177": {
+        "label": "Welsh springer spaniel",
+        "second_labels": []
+    },
+    "n02102318": {
+        "label": "cocker spaniel",
+        "second_labels": [
+            "English cocker spaniel",
+            "cocker"
+        ]
+    },
+    "n02102480": {
+        "label": "Sussex spaniel",
+        "second_labels": []
+    },
+    "n02102973": {
+        "label": "Irish water spaniel",
+        "second_labels": []
+    },
+    "n02104029": {
+        "label": "kuvasz",
+        "second_labels": []
+    },
+    "n02104365": {
+        "label": "schipperke",
+        "second_labels": []
+    },
+    "n02105056": {
+        "label": "groenendael",
+        "second_labels": []
+    },
+    "n02105162": {
+        "label": "malinois",
+        "second_labels": []
+    },
+    "n02105251": {
+        "label": "briard",
+        "second_labels": []
+    },
+    "n02105412": {
+        "label": "kelpie",
+        "second_labels": []
+    },
+    "n02105505": {
+        "label": "komondor",
+        "second_labels": []
+    },
+    "n02105641": {
+        "label": "Old English sheepdog",
+        "second_labels": [
+            "bobtail"
+        ]
+    },
+    "n02105855": {
+        "label": "Shetland sheepdog",
+        "second_labels": [
+            "Shetland sheep dog",
+            "Shetland"
+        ]
+    },
+    "n02106030": {
+        "label": "collie",
+        "second_labels": []
+    },
+    "n02106166": {
+        "label": "Border collie",
+        "second_labels": []
+    },
+    "n02106382": {
+        "label": "Bouvier des Flandres",
+        "second_labels": [
+            "Bouviers des Flandres"
+        ]
+    },
+    "n02106550": {
+        "label": "Rottweiler",
+        "second_labels": []
+    },
+    "n02106662": {
+        "label": "German shepherd",
+        "second_labels": [
+            "German shepherd dog",
+            "German police dog",
+            "alsatian"
+        ]
+    },
+    "n02107142": {
+        "label": "Doberman",
+        "second_labels": [
+            "Doberman pinscher"
+        ]
+    },
+    "n02107312": {
+        "label": "miniature pinscher",
+        "second_labels": []
+    },
+    "n02107574": {
+        "label": "Greater Swiss Mountain dog",
+        "second_labels": []
+    },
+    "n02107683": {
+        "label": "Bernese mountain dog",
+        "second_labels": []
+    },
+    "n02107908": {
+        "label": "Appenzeller",
+        "second_labels": []
+    },
+    "n02108000": {
+        "label": "EntleBucher",
+        "second_labels": []
+    },
+    "n02108089": {
+        "label": "boxer",
+        "second_labels": []
+    },
+    "n02108422": {
+        "label": "bull mastiff",
+        "second_labels": []
+    },
+    "n02108551": {
+        "label": "Tibetan mastiff",
+        "second_labels": []
+    },
+    "n02108915": {
+        "label": "French bulldog",
+        "second_labels": []
+    },
+    "n02109047": {
+        "label": "Great Dane",
+        "second_labels": []
+    },
+    "n02109525": {
+        "label": "Saint Bernard",
+        "second_labels": [
+            "St Bernard"
+        ]
+    },
+    "n02109961": {
+        "label": "Eskimo dog",
+        "second_labels": [
+            "husky"
+        ]
+    },
+    "n02110063": {
+        "label": "malamute",
+        "second_labels": [
+            "malemute",
+            "Alaskan malamute"
+        ]
+    },
+    "n02110185": {
+        "label": "Siberian husky",
+        "second_labels": []
+    },
+    "n02110341": {
+        "label": "dalmatian",
+        "second_labels": [
+            "coach dog",
+            "carriage dog"
+        ]
+    },
+    "n02110627": {
+        "label": "affenpinscher",
+        "second_labels": [
+            "monkey pinscher",
+            "monkey dog"
+        ]
+    },
+    "n02110806": {
+        "label": "basenji",
+        "second_labels": []
+    },
+    "n02110958": {
+        "label": "pug",
+        "second_labels": [
+            "pug-dog"
+        ]
+    },
+    "n02111129": {
+        "label": "Leonberg",
+        "second_labels": []
+    },
+    "n02111277": {
+        "label": "Newfoundland",
+        "second_labels": [
+            "Newfoundland dog"
+        ]
+    },
+    "n02111500": {
+        "label": "Great Pyrenees",
+        "second_labels": []
+    },
+    "n02111889": {
+        "label": "Samoyed",
+        "second_labels": [
+            "Samoyede"
+        ]
+    },
+    "n02112018": {
+        "label": "Pomeranian",
+        "second_labels": []
+    },
+    "n02112137": {
+        "label": "chow",
+        "second_labels": [
+            "chow chow"
+        ]
+    },
+    "n02112350": {
+        "label": "keeshond",
+        "second_labels": []
+    },
+    "n02112706": {
+        "label": "Brabancon griffon",
+        "second_labels": []
+    },
+    "n02113023": {
+        "label": "Pembroke",
+        "second_labels": [
+            "Pembroke Welsh corgi"
+        ]
+    },
+    "n02113186": {
+        "label": "Cardigan",
+        "second_labels": [
+            "Cardigan Welsh corgi"
+        ]
+    },
+    "n02113624": {
+        "label": "toy poodle",
+        "second_labels": []
+    },
+    "n02113712": {
+        "label": "miniature poodle",
+        "second_labels": []
+    },
+    "n02113799": {
+        "label": "standard poodle",
+        "second_labels": []
+    },
+    "n02113978": {
+        "label": "Mexican hairless",
+        "second_labels": []
+    },
+    "n02114367": {
+        "label": "timber wolf",
+        "second_labels": [
+            "grey wolf",
+            "gray wolf",
+            "Canis lupus"
+        ]
+    },
+    "n02114548": {
+        "label": "white wolf",
+        "second_labels": [
+            "Arctic wolf",
+            "Canis lupus tundrarum"
+        ]
+    },
+    "n02114712": {
+        "label": "red wolf",
+        "second_labels": [
+            "maned wolf",
+            "Canis rufus",
+            "Canis niger"
+        ]
+    },
+    "n02114855": {
+        "label": "coyote",
+        "second_labels": [
+            "prairie wolf",
+            "brush wolf",
+            "Canis latrans"
+        ]
+    },
+    "n02115641": {
+        "label": "dingo",
+        "second_labels": [
+            "warrigal",
+            "warragal",
+            "Canis dingo"
+        ]
+    },
+    "n02115913": {
+        "label": "dhole",
+        "second_labels": [
+            "Cuon alpinus"
+        ]
+    },
+    "n02116738": {
+        "label": "African hunting dog",
+        "second_labels": [
+            "hyena dog",
+            "Cape hunting dog",
+            "Lycaon pictus"
+        ]
+    },
+    "n02117135": {
+        "label": "hyena",
+        "second_labels": [
+            "hyaena"
+        ]
+    },
+    "n02119022": {
+        "label": "red fox",
+        "second_labels": [
+            "Vulpes vulpes"
+        ]
+    },
+    "n02119789": {
+        "label": "kit fox",
+        "second_labels": [
+            "Vulpes macrotis"
+        ]
+    },
+    "n02120079": {
+        "label": "Arctic fox",
+        "second_labels": [
+            "white fox",
+            "Alopex lagopus"
+        ]
+    },
+    "n02120505": {
+        "label": "grey fox",
+        "second_labels": [
+            "gray fox",
+            "Urocyon cinereoargenteus"
+        ]
+    },
+    "n02123045": {
+        "label": "tabby",
+        "second_labels": [
+            "tabby cat"
+        ]
+    },
+    "n02123159": {
+        "label": "tiger cat",
+        "second_labels": []
+    },
+    "n02123394": {
+        "label": "Persian cat",
+        "second_labels": []
+    },
+    "n02123597": {
+        "label": "Siamese cat",
+        "second_labels": [
+            "Siamese"
+        ]
+    },
+    "n02124075": {
+        "label": "Egyptian cat",
+        "second_labels": []
+    },
+    "n02125311": {
+        "label": "cougar",
+        "second_labels": [
+            "puma",
+            "catamount",
+            "mountain lion",
+            "painter",
+            "panther",
+            "Felis concolor"
+        ]
+    },
+    "n02127052": {
+        "label": "lynx",
+        "second_labels": [
+            "catamount"
+        ]
+    },
+    "n02128385": {
+        "label": "leopard",
+        "second_labels": [
+            "Panthera pardus"
+        ]
+    },
+    "n02128757": {
+        "label": "snow leopard",
+        "second_labels": [
+            "ounce",
+            "Panthera uncia"
+        ]
+    },
+    "n02128925": {
+        "label": "jaguar",
+        "second_labels": [
+            "panther",
+            "Panthera onca",
+            "Felis onca"
+        ]
+    },
+    "n02129165": {
+        "label": "lion",
+        "second_labels": [
+            "king of beasts",
+            "Panthera leo"
+        ]
+    },
+    "n02129604": {
+        "label": "tiger",
+        "second_labels": [
+            "Panthera tigris"
+        ]
+    },
+    "n02130308": {
+        "label": "cheetah",
+        "second_labels": [
+            "chetah",
+            "Acinonyx jubatus"
+        ]
+    },
+    "n02132136": {
+        "label": "brown bear",
+        "second_labels": [
+            "bruin",
+            "Ursus arctos"
+        ]
+    },
+    "n02133161": {
+        "label": "American black bear",
+        "second_labels": [
+            "black bear",
+            "Ursus americanus",
+            "Euarctos americanus"
+        ]
+    },
+    "n02134084": {
+        "label": "ice bear",
+        "second_labels": [
+            "polar bear",
+            "Ursus Maritimus",
+            "Thalarctos maritimus"
+        ]
+    },
+    "n02134418": {
+        "label": "sloth bear",
+        "second_labels": [
+            "Melursus ursinus",
+            "Ursus ursinus"
+        ]
+    },
+    "n02137549": {
+        "label": "mongoose",
+        "second_labels": []
+    },
+    "n02138441": {
+        "label": "meerkat",
+        "second_labels": [
+            "mierkat"
+        ]
+    },
+    "n02165105": {
+        "label": "tiger beetle",
+        "second_labels": []
+    },
+    "n02165456": {
+        "label": "ladybug",
+        "second_labels": [
+            "ladybeetle",
+            "lady beetle",
+            "ladybird",
+            "ladybird beetle"
+        ]
+    },
+    "n02167151": {
+        "label": "ground beetle",
+        "second_labels": [
+            "carabid beetle"
+        ]
+    },
+    "n02168699": {
+        "label": "long-horned beetle",
+        "second_labels": [
+            "longicorn",
+            "longicorn beetle"
+        ]
+    },
+    "n02169497": {
+        "label": "leaf beetle",
+        "second_labels": [
+            "chrysomelid"
+        ]
+    },
+    "n02172182": {
+        "label": "dung beetle",
+        "second_labels": []
+    },
+    "n02174001": {
+        "label": "rhinoceros beetle",
+        "second_labels": []
+    },
+    "n02177972": {
+        "label": "weevil",
+        "second_labels": []
+    },
+    "n02190166": {
+        "label": "fly",
+        "second_labels": []
+    },
+    "n02206856": {
+        "label": "bee",
+        "second_labels": []
+    },
+    "n02219486": {
+        "label": "ant",
+        "second_labels": [
+            "emmet",
+            "pismire"
+        ]
+    },
+    "n02226429": {
+        "label": "grasshopper",
+        "second_labels": [
+            "hopper"
+        ]
+    },
+    "n02229544": {
+        "label": "cricket",
+        "second_labels": []
+    },
+    "n02231487": {
+        "label": "walking stick",
+        "second_labels": [
+            "walkingstick",
+            "stick insect"
+        ]
+    },
+    "n02233338": {
+        "label": "cockroach",
+        "second_labels": [
+            "roach"
+        ]
+    },
+    "n02236044": {
+        "label": "mantis",
+        "second_labels": [
+            "mantid"
+        ]
+    },
+    "n02256656": {
+        "label": "cicada",
+        "second_labels": [
+            "cicala"
+        ]
+    },
+    "n02259212": {
+        "label": "leafhopper",
+        "second_labels": []
+    },
+    "n02264363": {
+        "label": "lacewing",
+        "second_labels": [
+            "lacewing fly"
+        ]
+    },
+    "n02268443": {
+        "label": "dragonfly",
+        "second_labels": [
+            "darning needle",
+            "devil's darning needle",
+            "sewing needle",
+            "snake feeder",
+            "snake doctor",
+            "mosquito hawk",
+            "skeeter hawk"
+        ]
+    },
+    "n02268853": {
+        "label": "damselfly",
+        "second_labels": []
+    },
+    "n02276258": {
+        "label": "admiral",
+        "second_labels": []
+    },
+    "n02277742": {
+        "label": "ringlet",
+        "second_labels": [
+            "ringlet butterfly"
+        ]
+    },
+    "n02279972": {
+        "label": "monarch",
+        "second_labels": [
+            "monarch butterfly",
+            "milkweed butterfly",
+            "Danaus plexippus"
+        ]
+    },
+    "n02280649": {
+        "label": "cabbage butterfly",
+        "second_labels": []
+    },
+    "n02281406": {
+        "label": "sulphur butterfly",
+        "second_labels": [
+            "sulfur butterfly"
+        ]
+    },
+    "n02281787": {
+        "label": "lycaenid",
+        "second_labels": [
+            "lycaenid butterfly"
+        ]
+    },
+    "n02317335": {
+        "label": "starfish",
+        "second_labels": [
+            "sea star"
+        ]
+    },
+    "n02319095": {
+        "label": "sea urchin",
+        "second_labels": []
+    },
+    "n02321529": {
+        "label": "sea cucumber",
+        "second_labels": [
+            "holothurian"
+        ]
+    },
+    "n02325366": {
+        "label": "wood rabbit",
+        "second_labels": [
+            "cottontail",
+            "cottontail rabbit"
+        ]
+    },
+    "n02326432": {
+        "label": "hare",
+        "second_labels": []
+    },
+    "n02328150": {
+        "label": "Angora",
+        "second_labels": [
+            "Angora rabbit"
+        ]
+    },
+    "n02342885": {
+        "label": "hamster",
+        "second_labels": []
+    },
+    "n02346627": {
+        "label": "porcupine",
+        "second_labels": [
+            "hedgehog"
+        ]
+    },
+    "n02356798": {
+        "label": "fox squirrel",
+        "second_labels": [
+            "eastern fox squirrel",
+            "Sciurus niger"
+        ]
+    },
+    "n02361337": {
+        "label": "marmot",
+        "second_labels": []
+    },
+    "n02363005": {
+        "label": "beaver",
+        "second_labels": []
+    },
+    "n02364673": {
+        "label": "guinea pig",
+        "second_labels": [
+            "Cavia cobaya"
+        ]
+    },
+    "n02389026": {
+        "label": "sorrel",
+        "second_labels": []
+    },
+    "n02391049": {
+        "label": "zebra",
+        "second_labels": []
+    },
+    "n02395406": {
+        "label": "hog",
+        "second_labels": [
+            "pig",
+            "grunter",
+            "squealer",
+            "Sus scrofa"
+        ]
+    },
+    "n02396427": {
+        "label": "wild boar",
+        "second_labels": [
+            "boar",
+            "Sus scrofa"
+        ]
+    },
+    "n02397096": {
+        "label": "warthog",
+        "second_labels": []
+    },
+    "n02398521": {
+        "label": "hippopotamus",
+        "second_labels": [
+            "hippo",
+            "river horse",
+            "Hippopotamus amphibius"
+        ]
+    },
+    "n02403003": {
+        "label": "ox",
+        "second_labels": []
+    },
+    "n02408429": {
+        "label": "water buffalo",
+        "second_labels": [
+            "water ox",
+            "Asiatic buffalo",
+            "Bubalus bubalis"
+        ]
+    },
+    "n02410509": {
+        "label": "bison",
+        "second_labels": []
+    },
+    "n02412080": {
+        "label": "ram",
+        "second_labels": [
+            "tup"
+        ]
+    },
+    "n02415577": {
+        "label": "bighorn",
+        "second_labels": [
+            "bighorn sheep",
+            "cimarron",
+            "Rocky Mountain bighorn",
+            "Rocky Mountain sheep",
+            "Ovis canadensis"
+        ]
+    },
+    "n02417914": {
+        "label": "ibex",
+        "second_labels": [
+            "Capra ibex"
+        ]
+    },
+    "n02422106": {
+        "label": "hartebeest",
+        "second_labels": []
+    },
+    "n02422699": {
+        "label": "impala",
+        "second_labels": [
+            "Aepyceros melampus"
+        ]
+    },
+    "n02423022": {
+        "label": "gazelle",
+        "second_labels": []
+    },
+    "n02437312": {
+        "label": "Arabian camel",
+        "second_labels": [
+            "dromedary",
+            "Camelus dromedarius"
+        ]
+    },
+    "n02437616": {
+        "label": "llama",
+        "second_labels": []
+    },
+    "n02441942": {
+        "label": "weasel",
+        "second_labels": []
+    },
+    "n02442845": {
+        "label": "mink",
+        "second_labels": []
+    },
+    "n02443114": {
+        "label": "polecat",
+        "second_labels": [
+            "fitch",
+            "foulmart",
+            "foumart",
+            "Mustela putorius"
+        ]
+    },
+    "n02443484": {
+        "label": "black-footed ferret",
+        "second_labels": [
+            "ferret",
+            "Mustela nigripes"
+        ]
+    },
+    "n02444819": {
+        "label": "otter",
+        "second_labels": []
+    },
+    "n02445715": {
+        "label": "skunk",
+        "second_labels": [
+            "polecat",
+            "wood pussy"
+        ]
+    },
+    "n02447366": {
+        "label": "badger",
+        "second_labels": []
+    },
+    "n02454379": {
+        "label": "armadillo",
+        "second_labels": []
+    },
+    "n02457408": {
+        "label": "three-toed sloth",
+        "second_labels": [
+            "ai",
+            "Bradypus tridactylus"
+        ]
+    },
+    "n02480495": {
+        "label": "orangutan",
+        "second_labels": [
+            "orang",
+            "orangutang",
+            "Pongo pygmaeus"
+        ]
+    },
+    "n02480855": {
+        "label": "gorilla",
+        "second_labels": [
+            "Gorilla gorilla"
+        ]
+    },
+    "n02481823": {
+        "label": "chimpanzee",
+        "second_labels": [
+            "chimp",
+            "Pan troglodytes"
+        ]
+    },
+    "n02483362": {
+        "label": "gibbon",
+        "second_labels": [
+            "Hylobates lar"
+        ]
+    },
+    "n02483708": {
+        "label": "siamang",
+        "second_labels": [
+            "Hylobates syndactylus",
+            "Symphalangus syndactylus"
+        ]
+    },
+    "n02484975": {
+        "label": "guenon",
+        "second_labels": [
+            "guenon monkey"
+        ]
+    },
+    "n02486261": {
+        "label": "patas",
+        "second_labels": [
+            "hussar monkey",
+            "Erythrocebus patas"
+        ]
+    },
+    "n02486410": {
+        "label": "baboon",
+        "second_labels": []
+    },
+    "n02487347": {
+        "label": "macaque",
+        "second_labels": []
+    },
+    "n02488291": {
+        "label": "langur",
+        "second_labels": []
+    },
+    "n02488702": {
+        "label": "colobus",
+        "second_labels": [
+            "colobus monkey"
+        ]
+    },
+    "n02489166": {
+        "label": "proboscis monkey",
+        "second_labels": [
+            "Nasalis larvatus"
+        ]
+    },
+    "n02490219": {
+        "label": "marmoset",
+        "second_labels": []
+    },
+    "n02492035": {
+        "label": "capuchin",
+        "second_labels": [
+            "ringtail",
+            "Cebus capucinus"
+        ]
+    },
+    "n02492660": {
+        "label": "howler monkey",
+        "second_labels": [
+            "howler"
+        ]
+    },
+    "n02493509": {
+        "label": "titi",
+        "second_labels": [
+            "titi monkey"
+        ]
+    },
+    "n02493793": {
+        "label": "spider monkey",
+        "second_labels": [
+            "Ateles geoffroyi"
+        ]
+    },
+    "n02494079": {
+        "label": "squirrel monkey",
+        "second_labels": [
+            "Saimiri sciureus"
+        ]
+    },
+    "n02497673": {
+        "label": "Madagascar cat",
+        "second_labels": [
+            "ring-tailed lemur",
+            "Lemur catta"
+        ]
+    },
+    "n02500267": {
+        "label": "indri",
+        "second_labels": [
+            "indris",
+            "Indri indri",
+            "Indri brevicaudatus"
+        ]
+    },
+    "n02504013": {
+        "label": "Indian elephant",
+        "second_labels": [
+            "Elephas maximus"
+        ]
+    },
+    "n02504458": {
+        "label": "African elephant",
+        "second_labels": [
+            "Loxodonta africana"
+        ]
+    },
+    "n02509815": {
+        "label": "lesser panda",
+        "second_labels": [
+            "red panda",
+            "panda",
+            "bear cat",
+            "cat bear",
+            "Ailurus fulgens"
+        ]
+    },
+    "n02510455": {
+        "label": "giant panda",
+        "second_labels": [
+            "panda",
+            "panda bear",
+            "coon bear",
+            "Ailuropoda melanoleuca"
+        ]
+    },
+    "n02514041": {
+        "label": "barracouta",
+        "second_labels": [
+            "snoek"
+        ]
+    },
+    "n02526121": {
+        "label": "eel",
+        "second_labels": []
+    },
+    "n02536864": {
+        "label": "coho",
+        "second_labels": [
+            "cohoe",
+            "coho salmon",
+            "blue jack",
+            "silver salmon",
+            "Oncorhynchus kisutch"
+        ]
+    },
+    "n02606052": {
+        "label": "rock beauty",
+        "second_labels": [
+            "Holocanthus tricolor"
+        ]
+    },
+    "n02607072": {
+        "label": "anemone fish",
+        "second_labels": []
+    },
+    "n02640242": {
+        "label": "sturgeon",
+        "second_labels": []
+    },
+    "n02641379": {
+        "label": "gar",
+        "second_labels": [
+            "garfish",
+            "garpike",
+            "billfish",
+            "Lepisosteus osseus"
+        ]
+    },
+    "n02643566": {
+        "label": "lionfish",
+        "second_labels": []
+    },
+    "n02655020": {
+        "label": "puffer",
+        "second_labels": [
+            "pufferfish",
+            "blowfish",
+            "globefish"
+        ]
+    },
+    "n02666196": {
+        "label": "abacus",
+        "second_labels": []
+    },
+    "n02667093": {
+        "label": "abaya",
+        "second_labels": []
+    },
+    "n02669723": {
+        "label": "academic gown",
+        "second_labels": [
+            "academic robe",
+            "judge's robe"
+        ]
+    },
+    "n02672831": {
+        "label": "accordion",
+        "second_labels": [
+            "piano accordion",
+            "squeeze box"
+        ]
+    },
+    "n02676566": {
+        "label": "acoustic guitar",
+        "second_labels": []
+    },
+    "n02687172": {
+        "label": "aircraft carrier",
+        "second_labels": [
+            "carrier",
+            "flattop",
+            "attack aircraft carrier"
+        ]
+    },
+    "n02690373": {
+        "label": "airliner",
+        "second_labels": []
+    },
+    "n02692877": {
+        "label": "airship",
+        "second_labels": [
+            "dirigible"
+        ]
+    },
+    "n02699494": {
+        "label": "altar",
+        "second_labels": []
+    },
+    "n02701002": {
+        "label": "ambulance",
+        "second_labels": []
+    },
+    "n02704792": {
+        "label": "amphibian",
+        "second_labels": [
+            "amphibious vehicle"
+        ]
+    },
+    "n02708093": {
+        "label": "analog clock",
+        "second_labels": []
+    },
+    "n02727426": {
+        "label": "apiary",
+        "second_labels": [
+            "bee house"
+        ]
+    },
+    "n02730930": {
+        "label": "apron",
+        "second_labels": []
+    },
+    "n02747177": {
+        "label": "ashcan",
+        "second_labels": [
+            "trash can",
+            "garbage can",
+            "wastebin",
+            "ash bin",
+            "ash-bin",
+            "ashbin",
+            "dustbin",
+            "trash barrel",
+            "trash bin"
+        ]
+    },
+    "n02749479": {
+        "label": "assault rifle",
+        "second_labels": [
+            "assault gun"
+        ]
+    },
+    "n02769748": {
+        "label": "backpack",
+        "second_labels": [
+            "back pack",
+            "knapsack",
+            "packsack",
+            "rucksack",
+            "haversack"
+        ]
+    },
+    "n02776631": {
+        "label": "bakery",
+        "second_labels": [
+            "bakeshop",
+            "bakehouse"
+        ]
+    },
+    "n02777292": {
+        "label": "balance beam",
+        "second_labels": [
+            "beam"
+        ]
+    },
+    "n02782093": {
+        "label": "balloon",
+        "second_labels": []
+    },
+    "n02783161": {
+        "label": "ballpoint",
+        "second_labels": [
+            "ballpoint pen",
+            "ballpen",
+            "Biro"
+        ]
+    },
+    "n02786058": {
+        "label": "Band Aid",
+        "second_labels": []
+    },
+    "n02787622": {
+        "label": "banjo",
+        "second_labels": []
+    },
+    "n02788148": {
+        "label": "bannister",
+        "second_labels": [
+            "banister",
+            "balustrade",
+            "balusters",
+            "handrail"
+        ]
+    },
+    "n02790996": {
+        "label": "barbell",
+        "second_labels": []
+    },
+    "n02791124": {
+        "label": "barber chair",
+        "second_labels": []
+    },
+    "n02791270": {
+        "label": "barbershop",
+        "second_labels": []
+    },
+    "n02793495": {
+        "label": "barn",
+        "second_labels": []
+    },
+    "n02794156": {
+        "label": "barometer",
+        "second_labels": []
+    },
+    "n02795169": {
+        "label": "barrel",
+        "second_labels": [
+            "cask"
+        ]
+    },
+    "n02797295": {
+        "label": "barrow",
+        "second_labels": [
+            "garden cart",
+            "lawn cart",
+            "wheelbarrow"
+        ]
+    },
+    "n02799071": {
+        "label": "baseball",
+        "second_labels": []
+    },
+    "n02802426": {
+        "label": "basketball",
+        "second_labels": []
+    },
+    "n02804414": {
+        "label": "bassinet",
+        "second_labels": []
+    },
+    "n02804610": {
+        "label": "bassoon",
+        "second_labels": []
+    },
+    "n02807133": {
+        "label": "bathing cap",
+        "second_labels": [
+            "swimming cap"
+        ]
+    },
+    "n02808304": {
+        "label": "bath towel",
+        "second_labels": []
+    },
+    "n02808440": {
+        "label": "bathtub",
+        "second_labels": [
+            "bathing tub",
+            "bath",
+            "tub"
+        ]
+    },
+    "n02814533": {
+        "label": "beach wagon",
+        "second_labels": [
+            "station wagon",
+            "wagon",
+            "estate car",
+            "beach waggon",
+            "station waggon",
+            "waggon"
+        ]
+    },
+    "n02814860": {
+        "label": "beacon",
+        "second_labels": [
+            "lighthouse",
+            "beacon light",
+            "pharos"
+        ]
+    },
+    "n02815834": {
+        "label": "beaker",
+        "second_labels": []
+    },
+    "n02817516": {
+        "label": "bearskin",
+        "second_labels": [
+            "busby",
+            "shako"
+        ]
+    },
+    "n02823428": {
+        "label": "beer bottle",
+        "second_labels": []
+    },
+    "n02823750": {
+        "label": "beer glass",
+        "second_labels": []
+    },
+    "n02825657": {
+        "label": "bell cote",
+        "second_labels": [
+            "bell cot"
+        ]
+    },
+    "n02834397": {
+        "label": "bib",
+        "second_labels": []
+    },
+    "n02835271": {
+        "label": "bicycle-built-for-two",
+        "second_labels": [
+            "tandem bicycle",
+            "tandem"
+        ]
+    },
+    "n02837789": {
+        "label": "bikini",
+        "second_labels": [
+            "two-piece"
+        ]
+    },
+    "n02840245": {
+        "label": "binder",
+        "second_labels": [
+            "ring-binder"
+        ]
+    },
+    "n02841315": {
+        "label": "binoculars",
+        "second_labels": [
+            "field glasses",
+            "opera glasses"
+        ]
+    },
+    "n02843684": {
+        "label": "birdhouse",
+        "second_labels": []
+    },
+    "n02859443": {
+        "label": "boathouse",
+        "second_labels": []
+    },
+    "n02860847": {
+        "label": "bobsled",
+        "second_labels": [
+            "bobsleigh",
+            "bob"
+        ]
+    },
+    "n02865351": {
+        "label": "bolo tie",
+        "second_labels": [
+            "bolo",
+            "bola tie",
+            "bola"
+        ]
+    },
+    "n02869837": {
+        "label": "bonnet",
+        "second_labels": [
+            "poke bonnet"
+        ]
+    },
+    "n02870880": {
+        "label": "bookcase",
+        "second_labels": []
+    },
+    "n02871525": {
+        "label": "bookshop",
+        "second_labels": [
+            "bookstore",
+            "bookstall"
+        ]
+    },
+    "n02877765": {
+        "label": "bottlecap",
+        "second_labels": []
+    },
+    "n02879718": {
+        "label": "bow",
+        "second_labels": []
+    },
+    "n02883205": {
+        "label": "bow tie",
+        "second_labels": [
+            "bow-tie",
+            "bowtie"
+        ]
+    },
+    "n02892201": {
+        "label": "brass",
+        "second_labels": [
+            "memorial tablet",
+            "plaque"
+        ]
+    },
+    "n02892767": {
+        "label": "brassiere",
+        "second_labels": [
+            "bra",
+            "bandeau"
+        ]
+    },
+    "n02894605": {
+        "label": "breakwater",
+        "second_labels": [
+            "groin",
+            "groyne",
+            "mole",
+            "bulwark",
+            "seawall",
+            "jetty"
+        ]
+    },
+    "n02895154": {
+        "label": "breastplate",
+        "second_labels": [
+            "aegis",
+            "egis"
+        ]
+    },
+    "n02906734": {
+        "label": "broom",
+        "second_labels": []
+    },
+    "n02909870": {
+        "label": "bucket",
+        "second_labels": [
+            "pail"
+        ]
+    },
+    "n02910353": {
+        "label": "buckle",
+        "second_labels": []
+    },
+    "n02916936": {
+        "label": "bulletproof vest",
+        "second_labels": []
+    },
+    "n02917067": {
+        "label": "bullet train",
+        "second_labels": [
+            "bullet"
+        ]
+    },
+    "n02927161": {
+        "label": "butcher shop",
+        "second_labels": [
+            "meat market"
+        ]
+    },
+    "n02930766": {
+        "label": "cab",
+        "second_labels": [
+            "hack",
+            "taxi",
+            "taxicab"
+        ]
+    },
+    "n02939185": {
+        "label": "caldron",
+        "second_labels": [
+            "cauldron"
+        ]
+    },
+    "n02948072": {
+        "label": "candle",
+        "second_labels": [
+            "taper",
+            "wax light"
+        ]
+    },
+    "n02950826": {
+        "label": "cannon",
+        "second_labels": []
+    },
+    "n02951358": {
+        "label": "canoe",
+        "second_labels": []
+    },
+    "n02951585": {
+        "label": "can opener",
+        "second_labels": [
+            "tin opener"
+        ]
+    },
+    "n02963159": {
+        "label": "cardigan",
+        "second_labels": []
+    },
+    "n02965783": {
+        "label": "car mirror",
+        "second_labels": []
+    },
+    "n02966193": {
+        "label": "carousel",
+        "second_labels": [
+            "carrousel",
+            "merry-go-round",
+            "roundabout",
+            "whirligig"
+        ]
+    },
+    "n02966687": {
+        "label": "carpenter's kit",
+        "second_labels": [
+            "tool kit"
+        ]
+    },
+    "n02971356": {
+        "label": "carton",
+        "second_labels": []
+    },
+    "n02974003": {
+        "label": "car wheel",
+        "second_labels": []
+    },
+    "n02977058": {
+        "label": "cash machine",
+        "second_labels": [
+            "cash dispenser",
+            "automated teller machine",
+            "automatic teller machine",
+            "automated teller",
+            "automatic teller",
+            "ATM"
+        ]
+    },
+    "n02978881": {
+        "label": "cassette",
+        "second_labels": []
+    },
+    "n02979186": {
+        "label": "cassette player",
+        "second_labels": []
+    },
+    "n02980441": {
+        "label": "castle",
+        "second_labels": []
+    },
+    "n02981792": {
+        "label": "catamaran",
+        "second_labels": []
+    },
+    "n02988304": {
+        "label": "CD player",
+        "second_labels": []
+    },
+    "n02992211": {
+        "label": "cello",
+        "second_labels": [
+            "violoncello"
+        ]
+    },
+    "n02992529": {
+        "label": "cellular telephone",
+        "second_labels": [
+            "cellular phone",
+            "cellphone",
+            "cell",
+            "mobile phone"
+        ]
+    },
+    "n02999410": {
+        "label": "chain",
+        "second_labels": []
+    },
+    "n03000134": {
+        "label": "chainlink fence",
+        "second_labels": []
+    },
+    "n03000247": {
+        "label": "chain mail",
+        "second_labels": [
+            "ring mail",
+            "mail",
+            "chain armor",
+            "chain armour",
+            "ring armor",
+            "ring armour"
+        ]
+    },
+    "n03000684": {
+        "label": "chain saw",
+        "second_labels": [
+            "chainsaw"
+        ]
+    },
+    "n03014705": {
+        "label": "chest",
+        "second_labels": []
+    },
+    "n03016953": {
+        "label": "chiffonier",
+        "second_labels": [
+            "commode"
+        ]
+    },
+    "n03017168": {
+        "label": "chime",
+        "second_labels": [
+            "bell",
+            "gong"
+        ]
+    },
+    "n03018349": {
+        "label": "china cabinet",
+        "second_labels": [
+            "china closet"
+        ]
+    },
+    "n03026506": {
+        "label": "Christmas stocking",
+        "second_labels": []
+    },
+    "n03028079": {
+        "label": "church",
+        "second_labels": [
+            "church building"
+        ]
+    },
+    "n03032252": {
+        "label": "cinema",
+        "second_labels": [
+            "movie theater",
+            "movie theatre",
+            "movie house",
+            "picture palace"
+        ]
+    },
+    "n03041632": {
+        "label": "cleaver",
+        "second_labels": [
+            "meat cleaver",
+            "chopper"
+        ]
+    },
+    "n03042490": {
+        "label": "cliff dwelling",
+        "second_labels": []
+    },
+    "n03045698": {
+        "label": "cloak",
+        "second_labels": []
+    },
+    "n03047690": {
+        "label": "clog",
+        "second_labels": [
+            "geta",
+            "patten",
+            "sabot"
+        ]
+    },
+    "n03062245": {
+        "label": "cocktail shaker",
+        "second_labels": []
+    },
+    "n03063599": {
+        "label": "coffee mug",
+        "second_labels": []
+    },
+    "n03063689": {
+        "label": "coffeepot",
+        "second_labels": []
+    },
+    "n03065424": {
+        "label": "coil",
+        "second_labels": [
+            "spiral",
+            "volute",
+            "whorl",
+            "helix"
+        ]
+    },
+    "n03075370": {
+        "label": "combination lock",
+        "second_labels": []
+    },
+    "n03085013": {
+        "label": "computer keyboard",
+        "second_labels": [
+            "keypad"
+        ]
+    },
+    "n03089624": {
+        "label": "confectionery",
+        "second_labels": [
+            "confectionary",
+            "candy store"
+        ]
+    },
+    "n03095699": {
+        "label": "container ship",
+        "second_labels": [
+            "containership",
+            "container vessel"
+        ]
+    },
+    "n03100240": {
+        "label": "convertible",
+        "second_labels": []
+    },
+    "n03109150": {
+        "label": "corkscrew",
+        "second_labels": [
+            "bottle screw"
+        ]
+    },
+    "n03110669": {
+        "label": "cornet",
+        "second_labels": [
+            "horn",
+            "trumpet",
+            "trump"
+        ]
+    },
+    "n03124043": {
+        "label": "cowboy boot",
+        "second_labels": []
+    },
+    "n03124170": {
+        "label": "cowboy hat",
+        "second_labels": [
+            "ten-gallon hat"
+        ]
+    },
+    "n03125729": {
+        "label": "cradle",
+        "second_labels": []
+    },
+    "n03126707": {
+        "label": "crane",
+        "second_labels": []
+    },
+    "n03127747": {
+        "label": "crash helmet",
+        "second_labels": []
+    },
+    "n03127925": {
+        "label": "crate",
+        "second_labels": []
+    },
+    "n03131574": {
+        "label": "crib",
+        "second_labels": [
+            "cot"
+        ]
+    },
+    "n03133878": {
+        "label": "Crock Pot",
+        "second_labels": []
+    },
+    "n03134739": {
+        "label": "croquet ball",
+        "second_labels": []
+    },
+    "n03141823": {
+        "label": "crutch",
+        "second_labels": []
+    },
+    "n03146219": {
+        "label": "cuirass",
+        "second_labels": []
+    },
+    "n03160309": {
+        "label": "dam",
+        "second_labels": [
+            "dike",
+            "dyke"
+        ]
+    },
+    "n03179701": {
+        "label": "desk",
+        "second_labels": []
+    },
+    "n03180011": {
+        "label": "desktop computer",
+        "second_labels": []
+    },
+    "n03187595": {
+        "label": "dial telephone",
+        "second_labels": [
+            "dial phone"
+        ]
+    },
+    "n03188531": {
+        "label": "diaper",
+        "second_labels": [
+            "nappy",
+            "napkin"
+        ]
+    },
+    "n03196217": {
+        "label": "digital clock",
+        "second_labels": []
+    },
+    "n03197337": {
+        "label": "digital watch",
+        "second_labels": []
+    },
+    "n03201208": {
+        "label": "dining table",
+        "second_labels": [
+            "board"
+        ]
+    },
+    "n03207743": {
+        "label": "dishrag",
+        "second_labels": [
+            "dishcloth"
+        ]
+    },
+    "n03207941": {
+        "label": "dishwasher",
+        "second_labels": [
+            "dish washer",
+            "dishwashing machine"
+        ]
+    },
+    "n03208938": {
+        "label": "disk brake",
+        "second_labels": [
+            "disc brake"
+        ]
+    },
+    "n03216828": {
+        "label": "dock",
+        "second_labels": [
+            "dockage",
+            "docking facility"
+        ]
+    },
+    "n03218198": {
+        "label": "dogsled",
+        "second_labels": [
+            "dog sled",
+            "dog sleigh"
+        ]
+    },
+    "n03220513": {
+        "label": "dome",
+        "second_labels": []
+    },
+    "n03223299": {
+        "label": "doormat",
+        "second_labels": [
+            "welcome mat"
+        ]
+    },
+    "n03240683": {
+        "label": "drilling platform",
+        "second_labels": [
+            "offshore rig"
+        ]
+    },
+    "n03249569": {
+        "label": "drum",
+        "second_labels": [
+            "membranophone",
+            "tympan"
+        ]
+    },
+    "n03250847": {
+        "label": "drumstick",
+        "second_labels": []
+    },
+    "n03255030": {
+        "label": "dumbbell",
+        "second_labels": []
+    },
+    "n03259280": {
+        "label": "Dutch oven",
+        "second_labels": []
+    },
+    "n03271574": {
+        "label": "electric fan",
+        "second_labels": [
+            "blower"
+        ]
+    },
+    "n03272010": {
+        "label": "electric guitar",
+        "second_labels": []
+    },
+    "n03272562": {
+        "label": "electric locomotive",
+        "second_labels": []
+    },
+    "n03290653": {
+        "label": "entertainment center",
+        "second_labels": []
+    },
+    "n03291819": {
+        "label": "envelope",
+        "second_labels": []
+    },
+    "n03297495": {
+        "label": "espresso maker",
+        "second_labels": []
+    },
+    "n03314780": {
+        "label": "face powder",
+        "second_labels": []
+    },
+    "n03325584": {
+        "label": "feather boa",
+        "second_labels": [
+            "boa"
+        ]
+    },
+    "n03337140": {
+        "label": "file",
+        "second_labels": [
+            "file cabinet",
+            "filing cabinet"
+        ]
+    },
+    "n03344393": {
+        "label": "fireboat",
+        "second_labels": []
+    },
+    "n03345487": {
+        "label": "fire engine",
+        "second_labels": [
+            "fire truck"
+        ]
+    },
+    "n03347037": {
+        "label": "fire screen",
+        "second_labels": [
+            "fireguard"
+        ]
+    },
+    "n03355925": {
+        "label": "flagpole",
+        "second_labels": [
+            "flagstaff"
+        ]
+    },
+    "n03372029": {
+        "label": "flute",
+        "second_labels": [
+            "transverse flute"
+        ]
+    },
+    "n03376595": {
+        "label": "folding chair",
+        "second_labels": []
+    },
+    "n03379051": {
+        "label": "football helmet",
+        "second_labels": []
+    },
+    "n03384352": {
+        "label": "forklift",
+        "second_labels": []
+    },
+    "n03388043": {
+        "label": "fountain",
+        "second_labels": []
+    },
+    "n03388183": {
+        "label": "fountain pen",
+        "second_labels": []
+    },
+    "n03388549": {
+        "label": "four-poster",
+        "second_labels": []
+    },
+    "n03393912": {
+        "label": "freight car",
+        "second_labels": []
+    },
+    "n03394916": {
+        "label": "French horn",
+        "second_labels": [
+            "horn"
+        ]
+    },
+    "n03400231": {
+        "label": "frying pan",
+        "second_labels": [
+            "frypan",
+            "skillet"
+        ]
+    },
+    "n03404251": {
+        "label": "fur coat",
+        "second_labels": []
+    },
+    "n03417042": {
+        "label": "garbage truck",
+        "second_labels": [
+            "dustcart"
+        ]
+    },
+    "n03424325": {
+        "label": "gasmask",
+        "second_labels": [
+            "respirator",
+            "gas helmet"
+        ]
+    },
+    "n03425413": {
+        "label": "gas pump",
+        "second_labels": [
+            "gasoline pump",
+            "petrol pump",
+            "island dispenser"
+        ]
+    },
+    "n03443371": {
+        "label": "goblet",
+        "second_labels": []
+    },
+    "n03444034": {
+        "label": "go-kart",
+        "second_labels": []
+    },
+    "n03445777": {
+        "label": "golf ball",
+        "second_labels": []
+    },
+    "n03445924": {
+        "label": "golfcart",
+        "second_labels": [
+            "golf cart"
+        ]
+    },
+    "n03447447": {
+        "label": "gondola",
+        "second_labels": []
+    },
+    "n03447721": {
+        "label": "gong",
+        "second_labels": [
+            "tam-tam"
+        ]
+    },
+    "n03450230": {
+        "label": "gown",
+        "second_labels": []
+    },
+    "n03452741": {
+        "label": "grand piano",
+        "second_labels": [
+            "grand"
+        ]
+    },
+    "n03457902": {
+        "label": "greenhouse",
+        "second_labels": [
+            "nursery",
+            "glasshouse"
+        ]
+    },
+    "n03459775": {
+        "label": "grille",
+        "second_labels": [
+            "radiator grille"
+        ]
+    },
+    "n03461385": {
+        "label": "grocery store",
+        "second_labels": [
+            "grocery",
+            "food market",
+            "market"
+        ]
+    },
+    "n03467068": {
+        "label": "guillotine",
+        "second_labels": []
+    },
+    "n03476684": {
+        "label": "hair slide",
+        "second_labels": []
+    },
+    "n03476991": {
+        "label": "hair spray",
+        "second_labels": []
+    },
+    "n03478589": {
+        "label": "half track",
+        "second_labels": []
+    },
+    "n03481172": {
+        "label": "hammer",
+        "second_labels": []
+    },
+    "n03482405": {
+        "label": "hamper",
+        "second_labels": []
+    },
+    "n03483316": {
+        "label": "hand blower",
+        "second_labels": [
+            "blow dryer",
+            "blow drier",
+            "hair dryer",
+            "hair drier"
+        ]
+    },
+    "n03485407": {
+        "label": "hand-held computer",
+        "second_labels": [
+            "hand-held microcomputer"
+        ]
+    },
+    "n03485794": {
+        "label": "handkerchief",
+        "second_labels": [
+            "hankie",
+            "hanky",
+            "hankey"
+        ]
+    },
+    "n03492542": {
+        "label": "hard disc",
+        "second_labels": [
+            "hard disk",
+            "fixed disk"
+        ]
+    },
+    "n03494278": {
+        "label": "harmonica",
+        "second_labels": [
+            "mouth organ",
+            "harp",
+            "mouth harp"
+        ]
+    },
+    "n03495258": {
+        "label": "harp",
+        "second_labels": []
+    },
+    "n03496892": {
+        "label": "harvester",
+        "second_labels": [
+            "reaper"
+        ]
+    },
+    "n03498962": {
+        "label": "hatchet",
+        "second_labels": []
+    },
+    "n03527444": {
+        "label": "holster",
+        "second_labels": []
+    },
+    "n03529860": {
+        "label": "home theater",
+        "second_labels": [
+            "home theatre"
+        ]
+    },
+    "n03530642": {
+        "label": "honeycomb",
+        "second_labels": []
+    },
+    "n03532672": {
+        "label": "hook",
+        "second_labels": [
+            "claw"
+        ]
+    },
+    "n03534580": {
+        "label": "hoopskirt",
+        "second_labels": [
+            "crinoline"
+        ]
+    },
+    "n03535780": {
+        "label": "horizontal bar",
+        "second_labels": [
+            "high bar"
+        ]
+    },
+    "n03538406": {
+        "label": "horse cart",
+        "second_labels": [
+            "horse-cart"
+        ]
+    },
+    "n03544143": {
+        "label": "hourglass",
+        "second_labels": []
+    },
+    "n03584254": {
+        "label": "iPod",
+        "second_labels": []
+    },
+    "n03584829": {
+        "label": "iron",
+        "second_labels": [
+            "smoothing iron"
+        ]
+    },
+    "n03590841": {
+        "label": "jack-o'-lantern",
+        "second_labels": []
+    },
+    "n03594734": {
+        "label": "jean",
+        "second_labels": [
+            "blue jean",
+            "denim"
+        ]
+    },
+    "n03594945": {
+        "label": "jeep",
+        "second_labels": [
+            "landrover"
+        ]
+    },
+    "n03595614": {
+        "label": "jersey",
+        "second_labels": [
+            "T-shirt",
+            "tee shirt"
+        ]
+    },
+    "n03598930": {
+        "label": "jigsaw puzzle",
+        "second_labels": []
+    },
+    "n03599486": {
+        "label": "jinrikisha",
+        "second_labels": [
+            "ricksha",
+            "rickshaw"
+        ]
+    },
+    "n03602883": {
+        "label": "joystick",
+        "second_labels": []
+    },
+    "n03617480": {
+        "label": "kimono",
+        "second_labels": []
+    },
+    "n03623198": {
+        "label": "knee pad",
+        "second_labels": []
+    },
+    "n03627232": {
+        "label": "knot",
+        "second_labels": []
+    },
+    "n03630383": {
+        "label": "lab coat",
+        "second_labels": [
+            "laboratory coat"
+        ]
+    },
+    "n03633091": {
+        "label": "ladle",
+        "second_labels": []
+    },
+    "n03637318": {
+        "label": "lampshade",
+        "second_labels": [
+            "lamp shade"
+        ]
+    },
+    "n03642806": {
+        "label": "laptop",
+        "second_labels": [
+            "laptop computer"
+        ]
+    },
+    "n03649909": {
+        "label": "lawn mower",
+        "second_labels": [
+            "mower"
+        ]
+    },
+    "n03657121": {
+        "label": "lens cap",
+        "second_labels": [
+            "lens cover"
+        ]
+    },
+    "n03658185": {
+        "label": "letter opener",
+        "second_labels": [
+            "paper knife",
+            "paperknife"
+        ]
+    },
+    "n03661043": {
+        "label": "library",
+        "second_labels": []
+    },
+    "n03662601": {
+        "label": "lifeboat",
+        "second_labels": []
+    },
+    "n03666591": {
+        "label": "lighter",
+        "second_labels": [
+            "light",
+            "igniter",
+            "ignitor"
+        ]
+    },
+    "n03670208": {
+        "label": "limousine",
+        "second_labels": [
+            "limo"
+        ]
+    },
+    "n03673027": {
+        "label": "liner",
+        "second_labels": [
+            "ocean liner"
+        ]
+    },
+    "n03676483": {
+        "label": "lipstick",
+        "second_labels": [
+            "lip rouge"
+        ]
+    },
+    "n03680355": {
+        "label": "Loafer",
+        "second_labels": []
+    },
+    "n03690938": {
+        "label": "lotion",
+        "second_labels": []
+    },
+    "n03691459": {
+        "label": "loudspeaker",
+        "second_labels": [
+            "speaker",
+            "speaker unit",
+            "loudspeaker system",
+            "speaker system"
+        ]
+    },
+    "n03692522": {
+        "label": "loupe",
+        "second_labels": [
+            "jeweler's loupe"
+        ]
+    },
+    "n03697007": {
+        "label": "lumbermill",
+        "second_labels": [
+            "sawmill"
+        ]
+    },
+    "n03706229": {
+        "label": "magnetic compass",
+        "second_labels": []
+    },
+    "n03709823": {
+        "label": "mailbag",
+        "second_labels": [
+            "postbag"
+        ]
+    },
+    "n03710193": {
+        "label": "mailbox",
+        "second_labels": [
+            "letter box"
+        ]
+    },
+    "n03710637": {
+        "label": "maillot",
+        "second_labels": []
+    },
+    "n03710721": {
+        "label": "maillot",
+        "second_labels": [
+            "tank suit"
+        ]
+    },
+    "n03717622": {
+        "label": "manhole cover",
+        "second_labels": []
+    },
+    "n03720891": {
+        "label": "maraca",
+        "second_labels": []
+    },
+    "n03721384": {
+        "label": "marimba",
+        "second_labels": [
+            "xylophone"
+        ]
+    },
+    "n03724870": {
+        "label": "mask",
+        "second_labels": []
+    },
+    "n03729826": {
+        "label": "matchstick",
+        "second_labels": []
+    },
+    "n03733131": {
+        "label": "maypole",
+        "second_labels": []
+    },
+    "n03733281": {
+        "label": "maze",
+        "second_labels": [
+            "labyrinth"
+        ]
+    },
+    "n03733805": {
+        "label": "measuring cup",
+        "second_labels": []
+    },
+    "n03742115": {
+        "label": "medicine chest",
+        "second_labels": [
+            "medicine cabinet"
+        ]
+    },
+    "n03743016": {
+        "label": "megalith",
+        "second_labels": [
+            "megalithic structure"
+        ]
+    },
+    "n03759954": {
+        "label": "microphone",
+        "second_labels": [
+            "mike"
+        ]
+    },
+    "n03761084": {
+        "label": "microwave",
+        "second_labels": [
+            "microwave oven"
+        ]
+    },
+    "n03763968": {
+        "label": "military uniform",
+        "second_labels": []
+    },
+    "n03764736": {
+        "label": "milk can",
+        "second_labels": []
+    },
+    "n03769881": {
+        "label": "minibus",
+        "second_labels": []
+    },
+    "n03770439": {
+        "label": "miniskirt",
+        "second_labels": [
+            "mini"
+        ]
+    },
+    "n03770679": {
+        "label": "minivan",
+        "second_labels": []
+    },
+    "n03773504": {
+        "label": "missile",
+        "second_labels": []
+    },
+    "n03775071": {
+        "label": "mitten",
+        "second_labels": []
+    },
+    "n03775546": {
+        "label": "mixing bowl",
+        "second_labels": []
+    },
+    "n03776460": {
+        "label": "mobile home",
+        "second_labels": [
+            "manufactured home"
+        ]
+    },
+    "n03777568": {
+        "label": "Model T",
+        "second_labels": []
+    },
+    "n03777754": {
+        "label": "modem",
+        "second_labels": []
+    },
+    "n03781244": {
+        "label": "monastery",
+        "second_labels": []
+    },
+    "n03782006": {
+        "label": "monitor",
+        "second_labels": []
+    },
+    "n03785016": {
+        "label": "moped",
+        "second_labels": []
+    },
+    "n03786901": {
+        "label": "mortar",
+        "second_labels": []
+    },
+    "n03787032": {
+        "label": "mortarboard",
+        "second_labels": []
+    },
+    "n03788195": {
+        "label": "mosque",
+        "second_labels": []
+    },
+    "n03788365": {
+        "label": "mosquito net",
+        "second_labels": []
+    },
+    "n03791053": {
+        "label": "motor scooter",
+        "second_labels": [
+            "scooter"
+        ]
+    },
+    "n03792782": {
+        "label": "mountain bike",
+        "second_labels": [
+            "all-terrain bike",
+            "off-roader"
+        ]
+    },
+    "n03792972": {
+        "label": "mountain tent",
+        "second_labels": []
+    },
+    "n03793489": {
+        "label": "mouse",
+        "second_labels": [
+            "computer mouse"
+        ]
+    },
+    "n03794056": {
+        "label": "mousetrap",
+        "second_labels": []
+    },
+    "n03796401": {
+        "label": "moving van",
+        "second_labels": []
+    },
+    "n03803284": {
+        "label": "muzzle",
+        "second_labels": []
+    },
+    "n03804744": {
+        "label": "nail",
+        "second_labels": []
+    },
+    "n03814639": {
+        "label": "neck brace",
+        "second_labels": []
+    },
+    "n03814906": {
+        "label": "necklace",
+        "second_labels": []
+    },
+    "n03825788": {
+        "label": "nipple",
+        "second_labels": []
+    },
+    "n03832673": {
+        "label": "notebook",
+        "second_labels": [
+            "notebook computer"
+        ]
+    },
+    "n03837869": {
+        "label": "obelisk",
+        "second_labels": []
+    },
+    "n03838899": {
+        "label": "oboe",
+        "second_labels": [
+            "hautboy",
+            "hautbois"
+        ]
+    },
+    "n03840681": {
+        "label": "ocarina",
+        "second_labels": [
+            "sweet potato"
+        ]
+    },
+    "n03841143": {
+        "label": "odometer",
+        "second_labels": [
+            "hodometer",
+            "mileometer",
+            "milometer"
+        ]
+    },
+    "n03843555": {
+        "label": "oil filter",
+        "second_labels": []
+    },
+    "n03854065": {
+        "label": "organ",
+        "second_labels": [
+            "pipe organ"
+        ]
+    },
+    "n03857828": {
+        "label": "oscilloscope",
+        "second_labels": [
+            "scope",
+            "cathode-ray oscilloscope",
+            "CRO"
+        ]
+    },
+    "n03866082": {
+        "label": "overskirt",
+        "second_labels": []
+    },
+    "n03868242": {
+        "label": "oxcart",
+        "second_labels": []
+    },
+    "n03868863": {
+        "label": "oxygen mask",
+        "second_labels": []
+    },
+    "n03871628": {
+        "label": "packet",
+        "second_labels": []
+    },
+    "n03873416": {
+        "label": "paddle",
+        "second_labels": [
+            "boat paddle"
+        ]
+    },
+    "n03874293": {
+        "label": "paddlewheel",
+        "second_labels": [
+            "paddle wheel"
+        ]
+    },
+    "n03874599": {
+        "label": "padlock",
+        "second_labels": []
+    },
+    "n03876231": {
+        "label": "paintbrush",
+        "second_labels": []
+    },
+    "n03877472": {
+        "label": "pajama",
+        "second_labels": [
+            "pyjama",
+            "pj's",
+            "jammies"
+        ]
+    },
+    "n03877845": {
+        "label": "palace",
+        "second_labels": []
+    },
+    "n03884397": {
+        "label": "panpipe",
+        "second_labels": [
+            "pandean pipe",
+            "syrinx"
+        ]
+    },
+    "n03887697": {
+        "label": "paper towel",
+        "second_labels": []
+    },
+    "n03888257": {
+        "label": "parachute",
+        "second_labels": [
+            "chute"
+        ]
+    },
+    "n03888605": {
+        "label": "parallel bars",
+        "second_labels": [
+            "bars"
+        ]
+    },
+    "n03891251": {
+        "label": "park bench",
+        "second_labels": []
+    },
+    "n03891332": {
+        "label": "parking meter",
+        "second_labels": []
+    },
+    "n03895866": {
+        "label": "passenger car",
+        "second_labels": [
+            "coach",
+            "carriage"
+        ]
+    },
+    "n03899768": {
+        "label": "patio",
+        "second_labels": [
+            "terrace"
+        ]
+    },
+    "n03902125": {
+        "label": "pay-phone",
+        "second_labels": [
+            "pay-station"
+        ]
+    },
+    "n03903868": {
+        "label": "pedestal",
+        "second_labels": [
+            "plinth",
+            "footstall"
+        ]
+    },
+    "n03908618": {
+        "label": "pencil box",
+        "second_labels": [
+            "pencil case"
+        ]
+    },
+    "n03908714": {
+        "label": "pencil sharpener",
+        "second_labels": []
+    },
+    "n03916031": {
+        "label": "perfume",
+        "second_labels": [
+            "essence"
+        ]
+    },
+    "n03920288": {
+        "label": "Petri dish",
+        "second_labels": []
+    },
+    "n03924679": {
+        "label": "photocopier",
+        "second_labels": []
+    },
+    "n03929660": {
+        "label": "pick",
+        "second_labels": [
+            "plectrum",
+            "plectron"
+        ]
+    },
+    "n03929855": {
+        "label": "pickelhaube",
+        "second_labels": []
+    },
+    "n03930313": {
+        "label": "picket fence",
+        "second_labels": [
+            "paling"
+        ]
+    },
+    "n03930630": {
+        "label": "pickup",
+        "second_labels": [
+            "pickup truck"
+        ]
+    },
+    "n03933933": {
+        "label": "pier",
+        "second_labels": []
+    },
+    "n03935335": {
+        "label": "piggy bank",
+        "second_labels": [
+            "penny bank"
+        ]
+    },
+    "n03937543": {
+        "label": "pill bottle",
+        "second_labels": []
+    },
+    "n03938244": {
+        "label": "pillow",
+        "second_labels": []
+    },
+    "n03942813": {
+        "label": "ping-pong ball",
+        "second_labels": []
+    },
+    "n03944341": {
+        "label": "pinwheel",
+        "second_labels": []
+    },
+    "n03947888": {
+        "label": "pirate",
+        "second_labels": [
+            "pirate ship"
+        ]
+    },
+    "n03950228": {
+        "label": "pitcher",
+        "second_labels": [
+            "ewer"
+        ]
+    },
+    "n03954731": {
+        "label": "plane",
+        "second_labels": [
+            "carpenter's plane",
+            "woodworking plane"
+        ]
+    },
+    "n03956157": {
+        "label": "planetarium",
+        "second_labels": []
+    },
+    "n03958227": {
+        "label": "plastic bag",
+        "second_labels": []
+    },
+    "n03961711": {
+        "label": "plate rack",
+        "second_labels": []
+    },
+    "n03967562": {
+        "label": "plow",
+        "second_labels": [
+            "plough"
+        ]
+    },
+    "n03970156": {
+        "label": "plunger",
+        "second_labels": [
+            "plumber's helper"
+        ]
+    },
+    "n03976467": {
+        "label": "Polaroid camera",
+        "second_labels": [
+            "Polaroid Land camera"
+        ]
+    },
+    "n03976657": {
+        "label": "pole",
+        "second_labels": []
+    },
+    "n03977966": {
+        "label": "police van",
+        "second_labels": [
+            "police wagon",
+            "paddy wagon",
+            "patrol wagon",
+            "wagon",
+            "black Maria"
+        ]
+    },
+    "n03980874": {
+        "label": "poncho",
+        "second_labels": []
+    },
+    "n03982430": {
+        "label": "pool table",
+        "second_labels": [
+            "billiard table",
+            "snooker table"
+        ]
+    },
+    "n03983396": {
+        "label": "pop bottle",
+        "second_labels": [
+            "soda bottle"
+        ]
+    },
+    "n03991062": {
+        "label": "pot",
+        "second_labels": [
+            "flowerpot"
+        ]
+    },
+    "n03992509": {
+        "label": "potter's wheel",
+        "second_labels": []
+    },
+    "n03995372": {
+        "label": "power drill",
+        "second_labels": []
+    },
+    "n03998194": {
+        "label": "prayer rug",
+        "second_labels": [
+            "prayer mat"
+        ]
+    },
+    "n04004767": {
+        "label": "printer",
+        "second_labels": []
+    },
+    "n04005630": {
+        "label": "prison",
+        "second_labels": [
+            "prison house"
+        ]
+    },
+    "n04008634": {
+        "label": "projectile",
+        "second_labels": [
+            "missile"
+        ]
+    },
+    "n04009552": {
+        "label": "projector",
+        "second_labels": []
+    },
+    "n04019541": {
+        "label": "puck",
+        "second_labels": [
+            "hockey puck"
+        ]
+    },
+    "n04023962": {
+        "label": "punching bag",
+        "second_labels": [
+            "punch bag",
+            "punching ball",
+            "punchball"
+        ]
+    },
+    "n04026417": {
+        "label": "purse",
+        "second_labels": []
+    },
+    "n04033901": {
+        "label": "quill",
+        "second_labels": [
+            "quill pen"
+        ]
+    },
+    "n04033995": {
+        "label": "quilt",
+        "second_labels": [
+            "comforter",
+            "comfort",
+            "puff"
+        ]
+    },
+    "n04037443": {
+        "label": "racer",
+        "second_labels": [
+            "race car",
+            "racing car"
+        ]
+    },
+    "n04039381": {
+        "label": "racket",
+        "second_labels": [
+            "racquet"
+        ]
+    },
+    "n04040759": {
+        "label": "radiator",
+        "second_labels": []
+    },
+    "n04041544": {
+        "label": "radio",
+        "second_labels": [
+            "wireless"
+        ]
+    },
+    "n04044716": {
+        "label": "radio telescope",
+        "second_labels": [
+            "radio reflector"
+        ]
+    },
+    "n04049303": {
+        "label": "rain barrel",
+        "second_labels": []
+    },
+    "n04065272": {
+        "label": "recreational vehicle",
+        "second_labels": [
+            "RV",
+            "R.V."
+        ]
+    },
+    "n04067472": {
+        "label": "reel",
+        "second_labels": []
+    },
+    "n04069434": {
+        "label": "reflex camera",
+        "second_labels": []
+    },
+    "n04070727": {
+        "label": "refrigerator",
+        "second_labels": [
+            "icebox"
+        ]
+    },
+    "n04074963": {
+        "label": "remote control",
+        "second_labels": [
+            "remote"
+        ]
+    },
+    "n04081281": {
+        "label": "restaurant",
+        "second_labels": [
+            "eating house",
+            "eating place",
+            "eatery"
+        ]
+    },
+    "n04086273": {
+        "label": "revolver",
+        "second_labels": [
+            "six-gun",
+            "six-shooter"
+        ]
+    },
+    "n04090263": {
+        "label": "rifle",
+        "second_labels": []
+    },
+    "n04099969": {
+        "label": "rocking chair",
+        "second_labels": [
+            "rocker"
+        ]
+    },
+    "n04111531": {
+        "label": "rotisserie",
+        "second_labels": []
+    },
+    "n04116512": {
+        "label": "rubber eraser",
+        "second_labels": [
+            "rubber",
+            "pencil eraser"
+        ]
+    },
+    "n04118538": {
+        "label": "rugby ball",
+        "second_labels": []
+    },
+    "n04118776": {
+        "label": "rule",
+        "second_labels": [
+            "ruler"
+        ]
+    },
+    "n04120489": {
+        "label": "running shoe",
+        "second_labels": []
+    },
+    "n04125021": {
+        "label": "safe",
+        "second_labels": []
+    },
+    "n04127249": {
+        "label": "safety pin",
+        "second_labels": []
+    },
+    "n04131690": {
+        "label": "saltshaker",
+        "second_labels": [
+            "salt shaker"
+        ]
+    },
+    "n04133789": {
+        "label": "sandal",
+        "second_labels": []
+    },
+    "n04136333": {
+        "label": "sarong",
+        "second_labels": []
+    },
+    "n04141076": {
+        "label": "sax",
+        "second_labels": [
+            "saxophone"
+        ]
+    },
+    "n04141327": {
+        "label": "scabbard",
+        "second_labels": []
+    },
+    "n04141975": {
+        "label": "scale",
+        "second_labels": [
+            "weighing machine"
+        ]
+    },
+    "n04146614": {
+        "label": "school bus",
+        "second_labels": []
+    },
+    "n04147183": {
+        "label": "schooner",
+        "second_labels": []
+    },
+    "n04149813": {
+        "label": "scoreboard",
+        "second_labels": []
+    },
+    "n04152593": {
+        "label": "screen",
+        "second_labels": [
+            "CRT screen"
+        ]
+    },
+    "n04153751": {
+        "label": "screw",
+        "second_labels": []
+    },
+    "n04154565": {
+        "label": "screwdriver",
+        "second_labels": []
+    },
+    "n04162706": {
+        "label": "seat belt",
+        "second_labels": [
+            "seatbelt"
+        ]
+    },
+    "n04179913": {
+        "label": "sewing machine",
+        "second_labels": []
+    },
+    "n04192698": {
+        "label": "shield",
+        "second_labels": [
+            "buckler"
+        ]
+    },
+    "n04200800": {
+        "label": "shoe shop",
+        "second_labels": [
+            "shoe-shop",
+            "shoe store"
+        ]
+    },
+    "n04201297": {
+        "label": "shoji",
+        "second_labels": []
+    },
+    "n04204238": {
+        "label": "shopping basket",
+        "second_labels": []
+    },
+    "n04204347": {
+        "label": "shopping cart",
+        "second_labels": []
+    },
+    "n04208210": {
+        "label": "shovel",
+        "second_labels": []
+    },
+    "n04209133": {
+        "label": "shower cap",
+        "second_labels": []
+    },
+    "n04209239": {
+        "label": "shower curtain",
+        "second_labels": []
+    },
+    "n04228054": {
+        "label": "ski",
+        "second_labels": []
+    },
+    "n04229816": {
+        "label": "ski mask",
+        "second_labels": []
+    },
+    "n04235860": {
+        "label": "sleeping bag",
+        "second_labels": []
+    },
+    "n04238763": {
+        "label": "slide rule",
+        "second_labels": [
+            "slipstick"
+        ]
+    },
+    "n04239074": {
+        "label": "sliding door",
+        "second_labels": []
+    },
+    "n04243546": {
+        "label": "slot",
+        "second_labels": [
+            "one-armed bandit"
+        ]
+    },
+    "n04251144": {
+        "label": "snorkel",
+        "second_labels": []
+    },
+    "n04252077": {
+        "label": "snowmobile",
+        "second_labels": []
+    },
+    "n04252225": {
+        "label": "snowplow",
+        "second_labels": [
+            "snowplough"
+        ]
+    },
+    "n04254120": {
+        "label": "soap dispenser",
+        "second_labels": []
+    },
+    "n04254680": {
+        "label": "soccer ball",
+        "second_labels": []
+    },
+    "n04254777": {
+        "label": "sock",
+        "second_labels": []
+    },
+    "n04258138": {
+        "label": "solar dish",
+        "second_labels": [
+            "solar collector",
+            "solar furnace"
+        ]
+    },
+    "n04259630": {
+        "label": "sombrero",
+        "second_labels": []
+    },
+    "n04263257": {
+        "label": "soup bowl",
+        "second_labels": []
+    },
+    "n04264628": {
+        "label": "space bar",
+        "second_labels": []
+    },
+    "n04265275": {
+        "label": "space heater",
+        "second_labels": []
+    },
+    "n04266014": {
+        "label": "space shuttle",
+        "second_labels": []
+    },
+    "n04270147": {
+        "label": "spatula",
+        "second_labels": []
+    },
+    "n04273569": {
+        "label": "speedboat",
+        "second_labels": []
+    },
+    "n04275548": {
+        "label": "spider web",
+        "second_labels": [
+            "spider's web"
+        ]
+    },
+    "n04277352": {
+        "label": "spindle",
+        "second_labels": []
+    },
+    "n04285008": {
+        "label": "sports car",
+        "second_labels": [
+            "sport car"
+        ]
+    },
+    "n04286575": {
+        "label": "spotlight",
+        "second_labels": [
+            "spot"
+        ]
+    },
+    "n04296562": {
+        "label": "stage",
+        "second_labels": []
+    },
+    "n04310018": {
+        "label": "steam locomotive",
+        "second_labels": []
+    },
+    "n04311004": {
+        "label": "steel arch bridge",
+        "second_labels": []
+    },
+    "n04311174": {
+        "label": "steel drum",
+        "second_labels": []
+    },
+    "n04317175": {
+        "label": "stethoscope",
+        "second_labels": []
+    },
+    "n04325704": {
+        "label": "stole",
+        "second_labels": []
+    },
+    "n04326547": {
+        "label": "stone wall",
+        "second_labels": []
+    },
+    "n04328186": {
+        "label": "stopwatch",
+        "second_labels": [
+            "stop watch"
+        ]
+    },
+    "n04330267": {
+        "label": "stove",
+        "second_labels": []
+    },
+    "n04332243": {
+        "label": "strainer",
+        "second_labels": []
+    },
+    "n04335435": {
+        "label": "streetcar",
+        "second_labels": [
+            "tram",
+            "tramcar",
+            "trolley",
+            "trolley car"
+        ]
+    },
+    "n04336792": {
+        "label": "stretcher",
+        "second_labels": []
+    },
+    "n04344873": {
+        "label": "studio couch",
+        "second_labels": [
+            "day bed"
+        ]
+    },
+    "n04346328": {
+        "label": "stupa",
+        "second_labels": [
+            "tope"
+        ]
+    },
+    "n04347754": {
+        "label": "submarine",
+        "second_labels": [
+            "pigboat",
+            "sub",
+            "U-boat"
+        ]
+    },
+    "n04350905": {
+        "label": "suit",
+        "second_labels": [
+            "suit of clothes"
+        ]
+    },
+    "n04355338": {
+        "label": "sundial",
+        "second_labels": []
+    },
+    "n04355933": {
+        "label": "sunglass",
+        "second_labels": []
+    },
+    "n04356056": {
+        "label": "sunglasses",
+        "second_labels": [
+            "dark glasses",
+            "shades"
+        ]
+    },
+    "n04357314": {
+        "label": "sunscreen",
+        "second_labels": [
+            "sunblock",
+            "sun blocker"
+        ]
+    },
+    "n04366367": {
+        "label": "suspension bridge",
+        "second_labels": []
+    },
+    "n04367480": {
+        "label": "swab",
+        "second_labels": [
+            "swob",
+            "mop"
+        ]
+    },
+    "n04370456": {
+        "label": "sweatshirt",
+        "second_labels": []
+    },
+    "n04371430": {
+        "label": "swimming trunks",
+        "second_labels": [
+            "bathing trunks"
+        ]
+    },
+    "n04371774": {
+        "label": "swing",
+        "second_labels": []
+    },
+    "n04372370": {
+        "label": "switch",
+        "second_labels": [
+            "electric switch",
+            "electrical switch"
+        ]
+    },
+    "n04376876": {
+        "label": "syringe",
+        "second_labels": []
+    },
+    "n04380533": {
+        "label": "table lamp",
+        "second_labels": []
+    },
+    "n04389033": {
+        "label": "tank",
+        "second_labels": [
+            "army tank",
+            "armored combat vehicle",
+            "armoured combat vehicle"
+        ]
+    },
+    "n04392985": {
+        "label": "tape player",
+        "second_labels": []
+    },
+    "n04398044": {
+        "label": "teapot",
+        "second_labels": []
+    },
+    "n04399382": {
+        "label": "teddy",
+        "second_labels": [
+            "teddy bear"
+        ]
+    },
+    "n04404412": {
+        "label": "television",
+        "second_labels": [
+            "television system"
+        ]
+    },
+    "n04409515": {
+        "label": "tennis ball",
+        "second_labels": []
+    },
+    "n04417672": {
+        "label": "thatch",
+        "second_labels": [
+            "thatched roof"
+        ]
+    },
+    "n04418357": {
+        "label": "theater curtain",
+        "second_labels": [
+            "theatre curtain"
+        ]
+    },
+    "n04423845": {
+        "label": "thimble",
+        "second_labels": []
+    },
+    "n04428191": {
+        "label": "thresher",
+        "second_labels": [
+            "thrasher",
+            "threshing machine"
+        ]
+    },
+    "n04429376": {
+        "label": "throne",
+        "second_labels": []
+    },
+    "n04435653": {
+        "label": "tile roof",
+        "second_labels": []
+    },
+    "n04442312": {
+        "label": "toaster",
+        "second_labels": []
+    },
+    "n04443257": {
+        "label": "tobacco shop",
+        "second_labels": [
+            "tobacconist shop",
+            "tobacconist"
+        ]
+    },
+    "n04447861": {
+        "label": "toilet seat",
+        "second_labels": []
+    },
+    "n04456115": {
+        "label": "torch",
+        "second_labels": []
+    },
+    "n04458633": {
+        "label": "totem pole",
+        "second_labels": []
+    },
+    "n04461696": {
+        "label": "tow truck",
+        "second_labels": [
+            "tow car",
+            "wrecker"
+        ]
+    },
+    "n04462240": {
+        "label": "toyshop",
+        "second_labels": []
+    },
+    "n04465501": {
+        "label": "tractor",
+        "second_labels": []
+    },
+    "n04467665": {
+        "label": "trailer truck",
+        "second_labels": [
+            "tractor trailer",
+            "trucking rig",
+            "rig",
+            "articulated lorry",
+            "semi"
+        ]
+    },
+    "n04476259": {
+        "label": "tray",
+        "second_labels": []
+    },
+    "n04479046": {
+        "label": "trench coat",
+        "second_labels": []
+    },
+    "n04482393": {
+        "label": "tricycle",
+        "second_labels": [
+            "trike",
+            "velocipede"
+        ]
+    },
+    "n04483307": {
+        "label": "trimaran",
+        "second_labels": []
+    },
+    "n04485082": {
+        "label": "tripod",
+        "second_labels": []
+    },
+    "n04486054": {
+        "label": "triumphal arch",
+        "second_labels": []
+    },
+    "n04487081": {
+        "label": "trolleybus",
+        "second_labels": [
+            "trolley coach",
+            "trackless trolley"
+        ]
+    },
+    "n04487394": {
+        "label": "trombone",
+        "second_labels": []
+    },
+    "n04493381": {
+        "label": "tub",
+        "second_labels": [
+            "vat"
+        ]
+    },
+    "n04501370": {
+        "label": "turnstile",
+        "second_labels": []
+    },
+    "n04505470": {
+        "label": "typewriter keyboard",
+        "second_labels": []
+    },
+    "n04507155": {
+        "label": "umbrella",
+        "second_labels": []
+    },
+    "n04509417": {
+        "label": "unicycle",
+        "second_labels": [
+            "monocycle"
+        ]
+    },
+    "n04515003": {
+        "label": "upright",
+        "second_labels": [
+            "upright piano"
+        ]
+    },
+    "n04517823": {
+        "label": "vacuum",
+        "second_labels": [
+            "vacuum cleaner"
+        ]
+    },
+    "n04522168": {
+        "label": "vase",
+        "second_labels": []
+    },
+    "n04523525": {
+        "label": "vault",
+        "second_labels": []
+    },
+    "n04525038": {
+        "label": "velvet",
+        "second_labels": []
+    },
+    "n04525305": {
+        "label": "vending machine",
+        "second_labels": []
+    },
+    "n04532106": {
+        "label": "vestment",
+        "second_labels": []
+    },
+    "n04532670": {
+        "label": "viaduct",
+        "second_labels": []
+    },
+    "n04536866": {
+        "label": "violin",
+        "second_labels": [
+            "fiddle"
+        ]
+    },
+    "n04540053": {
+        "label": "volleyball",
+        "second_labels": []
+    },
+    "n04542943": {
+        "label": "waffle iron",
+        "second_labels": []
+    },
+    "n04548280": {
+        "label": "wall clock",
+        "second_labels": []
+    },
+    "n04548362": {
+        "label": "wallet",
+        "second_labels": [
+            "billfold",
+            "notecase",
+            "pocketbook"
+        ]
+    },
+    "n04550184": {
+        "label": "wardrobe",
+        "second_labels": [
+            "closet",
+            "press"
+        ]
+    },
+    "n04552348": {
+        "label": "warplane",
+        "second_labels": [
+            "military plane"
+        ]
+    },
+    "n04553703": {
+        "label": "washbasin",
+        "second_labels": [
+            "handbasin",
+            "washbowl",
+            "lavabo",
+            "wash-hand basin"
+        ]
+    },
+    "n04554684": {
+        "label": "washer",
+        "second_labels": [
+            "automatic washer",
+            "washing machine"
+        ]
+    },
+    "n04557648": {
+        "label": "water bottle",
+        "second_labels": []
+    },
+    "n04560804": {
+        "label": "water jug",
+        "second_labels": []
+    },
+    "n04562935": {
+        "label": "water tower",
+        "second_labels": []
+    },
+    "n04579145": {
+        "label": "whiskey jug",
+        "second_labels": []
+    },
+    "n04579432": {
+        "label": "whistle",
+        "second_labels": []
+    },
+    "n04584207": {
+        "label": "wig",
+        "second_labels": []
+    },
+    "n04589890": {
+        "label": "window screen",
+        "second_labels": []
+    },
+    "n04590129": {
+        "label": "window shade",
+        "second_labels": []
+    },
+    "n04591157": {
+        "label": "Windsor tie",
+        "second_labels": []
+    },
+    "n04591713": {
+        "label": "wine bottle",
+        "second_labels": []
+    },
+    "n04592741": {
+        "label": "wing",
+        "second_labels": []
+    },
+    "n04596742": {
+        "label": "wok",
+        "second_labels": []
+    },
+    "n04597913": {
+        "label": "wooden spoon",
+        "second_labels": []
+    },
+    "n04599235": {
+        "label": "wool",
+        "second_labels": [
+            "woolen",
+            "woollen"
+        ]
+    },
+    "n04604644": {
+        "label": "worm fence",
+        "second_labels": [
+            "snake fence",
+            "snake-rail fence",
+            "Virginia fence"
+        ]
+    },
+    "n04606251": {
+        "label": "wreck",
+        "second_labels": []
+    },
+    "n04612504": {
+        "label": "yawl",
+        "second_labels": []
+    },
+    "n04613696": {
+        "label": "yurt",
+        "second_labels": []
+    },
+    "n06359193": {
+        "label": "web site",
+        "second_labels": [
+            "website",
+            "internet site",
+            "site"
+        ]
+    },
+    "n06596364": {
+        "label": "comic book",
+        "second_labels": []
+    },
+    "n06785654": {
+        "label": "crossword puzzle",
+        "second_labels": [
+            "crossword"
+        ]
+    },
+    "n06794110": {
+        "label": "street sign",
+        "second_labels": []
+    },
+    "n06874185": {
+        "label": "traffic light",
+        "second_labels": [
+            "traffic signal",
+            "stoplight"
+        ]
+    },
+    "n07248320": {
+        "label": "book jacket",
+        "second_labels": [
+            "dust cover",
+            "dust jacket",
+            "dust wrapper"
+        ]
+    },
+    "n07565083": {
+        "label": "menu",
+        "second_labels": []
+    },
+    "n07579787": {
+        "label": "plate",
+        "second_labels": []
+    },
+    "n07583066": {
+        "label": "guacamole",
+        "second_labels": []
+    },
+    "n07584110": {
+        "label": "consomme",
+        "second_labels": []
+    },
+    "n07590611": {
+        "label": "hot pot",
+        "second_labels": [
+            "hotpot"
+        ]
+    },
+    "n07613480": {
+        "label": "trifle",
+        "second_labels": []
+    },
+    "n07614500": {
+        "label": "ice cream",
+        "second_labels": [
+            "icecream"
+        ]
+    },
+    "n07615774": {
+        "label": "ice lolly",
+        "second_labels": [
+            "lolly",
+            "lollipop",
+            "popsicle"
+        ]
+    },
+    "n07684084": {
+        "label": "French loaf",
+        "second_labels": []
+    },
+    "n07693725": {
+        "label": "bagel",
+        "second_labels": [
+            "beigel"
+        ]
+    },
+    "n07695742": {
+        "label": "pretzel",
+        "second_labels": []
+    },
+    "n07697313": {
+        "label": "cheeseburger",
+        "second_labels": []
+    },
+    "n07697537": {
+        "label": "hotdog",
+        "second_labels": [
+            "hot dog",
+            "red hot"
+        ]
+    },
+    "n07711569": {
+        "label": "mashed potato",
+        "second_labels": []
+    },
+    "n07714571": {
+        "label": "head cabbage",
+        "second_labels": []
+    },
+    "n07714990": {
+        "label": "broccoli",
+        "second_labels": []
+    },
+    "n07715103": {
+        "label": "cauliflower",
+        "second_labels": []
+    },
+    "n07716358": {
+        "label": "zucchini",
+        "second_labels": [
+            "courgette"
+        ]
+    },
+    "n07716906": {
+        "label": "spaghetti squash",
+        "second_labels": []
+    },
+    "n07717410": {
+        "label": "acorn squash",
+        "second_labels": []
+    },
+    "n07717556": {
+        "label": "butternut squash",
+        "second_labels": []
+    },
+    "n07718472": {
+        "label": "cucumber",
+        "second_labels": [
+            "cuke"
+        ]
+    },
+    "n07718747": {
+        "label": "artichoke",
+        "second_labels": [
+            "globe artichoke"
+        ]
+    },
+    "n07720875": {
+        "label": "bell pepper",
+        "second_labels": []
+    },
+    "n07730033": {
+        "label": "cardoon",
+        "second_labels": []
+    },
+    "n07734744": {
+        "label": "mushroom",
+        "second_labels": []
+    },
+    "n07742313": {
+        "label": "Granny Smith",
+        "second_labels": []
+    },
+    "n07745940": {
+        "label": "strawberry",
+        "second_labels": []
+    },
+    "n07747607": {
+        "label": "orange",
+        "second_labels": []
+    },
+    "n07749582": {
+        "label": "lemon",
+        "second_labels": []
+    },
+    "n07753113": {
+        "label": "fig",
+        "second_labels": []
+    },
+    "n07753275": {
+        "label": "pineapple",
+        "second_labels": [
+            "ananas"
+        ]
+    },
+    "n07753592": {
+        "label": "banana",
+        "second_labels": []
+    },
+    "n07754684": {
+        "label": "jackfruit",
+        "second_labels": [
+            "jak",
+            "jack"
+        ]
+    },
+    "n07760859": {
+        "label": "custard apple",
+        "second_labels": []
+    },
+    "n07768694": {
+        "label": "pomegranate",
+        "second_labels": []
+    },
+    "n07802026": {
+        "label": "hay",
+        "second_labels": []
+    },
+    "n07831146": {
+        "label": "carbonara",
+        "second_labels": []
+    },
+    "n07836838": {
+        "label": "chocolate sauce",
+        "second_labels": [
+            "chocolate syrup"
+        ]
+    },
+    "n07860988": {
+        "label": "dough",
+        "second_labels": []
+    },
+    "n07871810": {
+        "label": "meat loaf",
+        "second_labels": [
+            "meatloaf"
+        ]
+    },
+    "n07873807": {
+        "label": "pizza",
+        "second_labels": [
+            "pizza pie"
+        ]
+    },
+    "n07875152": {
+        "label": "potpie",
+        "second_labels": []
+    },
+    "n07880968": {
+        "label": "burrito",
+        "second_labels": []
+    },
+    "n07892512": {
+        "label": "red wine",
+        "second_labels": []
+    },
+    "n07920052": {
+        "label": "espresso",
+        "second_labels": []
+    },
+    "n07930864": {
+        "label": "cup",
+        "second_labels": []
+    },
+    "n07932039": {
+        "label": "eggnog",
+        "second_labels": []
+    },
+    "n09193705": {
+        "label": "alp",
+        "second_labels": []
+    },
+    "n09229709": {
+        "label": "bubble",
+        "second_labels": []
+    },
+    "n09246464": {
+        "label": "cliff",
+        "second_labels": [
+            "drop",
+            "drop-off"
+        ]
+    },
+    "n09256479": {
+        "label": "coral reef",
+        "second_labels": []
+    },
+    "n09288635": {
+        "label": "geyser",
+        "second_labels": []
+    },
+    "n09332890": {
+        "label": "lakeside",
+        "second_labels": [
+            "lakeshore"
+        ]
+    },
+    "n09399592": {
+        "label": "promontory",
+        "second_labels": [
+            "headland",
+            "head",
+            "foreland"
+        ]
+    },
+    "n09421951": {
+        "label": "sandbar",
+        "second_labels": [
+            "sand bar"
+        ]
+    },
+    "n09428293": {
+        "label": "seashore",
+        "second_labels": [
+            "coast",
+            "seacoast",
+            "sea-coast"
+        ]
+    },
+    "n09468604": {
+        "label": "valley",
+        "second_labels": [
+            "vale"
+        ]
+    },
+    "n09472597": {
+        "label": "volcano",
+        "second_labels": []
+    },
+    "n09835506": {
+        "label": "ballplayer",
+        "second_labels": [
+            "baseball player"
+        ]
+    },
+    "n10148035": {
+        "label": "groom",
+        "second_labels": [
+            "bridegroom"
+        ]
+    },
+    "n10565667": {
+        "label": "scuba diver",
+        "second_labels": []
+    },
+    "n11879895": {
+        "label": "rapeseed",
+        "second_labels": []
+    },
+    "n11939491": {
+        "label": "daisy",
+        "second_labels": []
+    },
+    "n12057211": {
+        "label": "yellow lady's slipper",
+        "second_labels": [
+            "yellow lady-slipper",
+            "Cypripedium calceolus",
+            "Cypripedium parviflorum"
+        ]
+    },
+    "n12144580": {
+        "label": "corn",
+        "second_labels": []
+    },
+    "n12267677": {
+        "label": "acorn",
+        "second_labels": []
+    },
+    "n12620546": {
+        "label": "hip",
+        "second_labels": [
+            "rose hip",
+            "rosehip"
+        ]
+    },
+    "n12768682": {
+        "label": "buckeye",
+        "second_labels": [
+            "horse chestnut",
+            "conker"
+        ]
+    },
+    "n12985857": {
+        "label": "coral fungus",
+        "second_labels": []
+    },
+    "n12998815": {
+        "label": "agaric",
+        "second_labels": []
+    },
+    "n13037406": {
+        "label": "gyromitra",
+        "second_labels": []
+    },
+    "n13040303": {
+        "label": "stinkhorn",
+        "second_labels": [
+            "carrion fungus"
+        ]
+    },
+    "n13044778": {
+        "label": "earthstar",
+        "second_labels": []
+    },
+    "n13052670": {
+        "label": "hen-of-the-woods",
+        "second_labels": [
+            "hen of the woods",
+            "Polyporus frondosus",
+            "Grifola frondosa"
+        ]
+    },
+    "n13054560": {
+        "label": "bolete",
+        "second_labels": []
+    },
+    "n13133613": {
+        "label": "ear",
+        "second_labels": [
+            "spike",
+            "capitulum"
+        ]
+    },
+    "n15075141": {
+        "label": "toilet tissue",
+        "second_labels": [
+            "toilet paper",
+            "bathroom tissue"
+        ]
+    }
+}

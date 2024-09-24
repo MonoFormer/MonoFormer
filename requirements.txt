@@ -1,0 +1,13 @@
+torch==2.0.0
+torchvision==0.15.1
+torchaudio==2.0.1
+
+accelerate
+transformers==4.38.0
+diffusers
+tqdm
+tensorboard
+pillow
+numpy==1.25.2
+addict
+ipython
