@@ -531,7 +531,6 @@ class MonoFormerForCausalLM(LlamaForCausalLM):
             cache_position=cache_position,
             c_embeds=c_embeds,
             c_embeds_mask=c_embeds_mask,
-            image_token_spans=image_token_spans,
         )
 
         hidden_states = outputs['last_hidden_state']

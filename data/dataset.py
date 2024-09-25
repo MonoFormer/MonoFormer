@@ -8,6 +8,7 @@ import pickle
 from typing import List
 import numpy as np
 from torch.utils.data import Dataset, IterableDataset, get_worker_info
+from PIL import Image
 
 
 class ImageNetDataset(Dataset):
@@ -86,6 +87,51 @@ class UltraChatDataset(IterableDataset):
 
                 for record in data:
                     yield self.item_processor(record)
+
+
+class JourneyDBDataset(Dataset):
+    def __init__(self, data_root, annotation_path, item_processor, shuffle=True):
+        self.data_root = data_root
+        self.shuffle = shuffle
+        self.item_processor = item_processor
+
+        annotations = []
+        with open(annotation_path, 'r') as fb:
+            for line in fb:
+                try:
+                    annotations.append(json.loads(line))
+                except:
+                    continue
+        
+        self.annotations = annotations
+        if self.shuffle:
+            self.rng = np.random.default_rng()
+            self.rng.shuffle(self.annotations)
+
+    def __len__(self):
+        return len(self.annotations)
+
+    def __getitem__(self, idx):
+        annotation = self.annotations[idx]
+        img_path = os.path.join(self.data_root, self.annotations[idx]['img_path'])
+        
+        # journeydb annotation contains a lot of missing images
+        if os.path.isfile(img_path):
+            image = Image.open(img_path).convert('RGB')
+        else:
+            return self.__getitem__(idx+1)
+
+        prompt = annotation['prompt']
+        try:
+            caption = annotation['Task2']['Caption']
+        except KeyError:
+            caption = ''
+        
+        return self.item_processor({
+            'image': image,
+            'prompt': prompt,
+            'caption': caption
+        })
 
 
 class ToIterableDataset(IterableDataset):

@@ -45,7 +45,7 @@ from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
 from transformers import AutoTokenizer, AutoConfig
 
-from data import MixIterDataset, ImageNetDataset, UltraChatDataset, ToIterableDataset
+from data import MixIterDataset, ImageNetDataset, JourneyDBDataset, UltraChatDataset, ToIterableDataset
 from diffusion import create_diffusion
 from imgproc import center_crop_arr
 
@@ -89,7 +89,7 @@ class UltraChatItemProcessor:
 
 
 class ImageNetItemProcessor:
-    def __init__(self, transform, text_dropout_prob, annotation_path='./data/imagenet_labels.json'):
+    def __init__(self, transform, text_dropout_prob=0.1, annotation_path='./data/imagenet_labels.json'):
         self.image_transform = transform
         self.text_dropout_prob = text_dropout_prob
         self.annotation = json.load(open(annotation_path, 'r'))
@@ -128,6 +128,47 @@ class ImageNetItemProcessor:
                 'output': DEFAULT_IMAGE_TOKEN + '\n',
             }
         
+        noise_image_index = [0]
+
+        # BUG: tokenizer can not properly tokenize '<|im_start|><image><|im_end|>', here we substitue <image> with <PAD> to make it tokenize correctly
+        # We substitue <image> back after tokenizing in collate function
+        conversation['input'] = conversation['input'].replace(DEFAULT_IMAGE_TOKEN, f'{DEFAULT_IMAGE_START_TOKEN}{DEFAULT_PAD_TOKEN}{DEFAULT_IMAGE_END_TOKEN}')
+        conversation['output'] = conversation['output'].replace(DEFAULT_IMAGE_TOKEN, f'{DEFAULT_IMAGE_START_TOKEN}{DEFAULT_PAD_TOKEN}{DEFAULT_IMAGE_END_TOKEN}')
+
+        return image, conversation, noise_image_index
+
+
+class JourneyDBItemProcessor:
+    def __init__(self, transform=None, text_dropout_prob=0.1, prompt_type='prompt', load_vae_feature=False):
+        self.image_transform = transform
+        self.text_dropout_prob = text_dropout_prob
+        self.prompt_type = prompt_type
+        self.load_vae_feature = load_vae_feature
+        assert prompt_type in ['prompt', 'caption'], 'prompt_type must be either prompt or caption.'
+    
+    def __call__(self, data_item: Dict):
+        image = data_item['image']
+        if not self.load_vae_feature:
+            image = self.image_transform(image)
+        
+        conversation = {
+            'input': data_item[self.prompt_type],
+            'output': DEFAULT_IMAGE_TOKEN + '\n',
+        }
+
+        conversation['input'] = f"Please generate an image of {conversation['input']}"
+        
+        # randomly convert some samples to unconditional generation
+        if random.uniform(0., 1.) < self.text_dropout_prob and DEFAULT_IMAGE_TOKEN in conversation['output']:
+            # NOTE: this is a hacky to replace all tokens in the input with padding token, so that these tokens are masked by attention mask in the collator.
+            # but the number of tokens computed here is different from the number of tokens tokenized by tokenizer
+            num_input_tokens = len(conversation['input'].split()) + conversation['input'].count(' ')
+            conversation = {
+                'input': DEFAULT_PAD_TOKEN * num_input_tokens,
+                'output': DEFAULT_IMAGE_TOKEN + '\n',
+            }
+        
+        # differentiate between image-generation and text-generation tasks
         noise_image_index = [0]
 
         # BUG: tokenizer can not properly tokenize '<|im_start|><image><|im_end|>', here we substitue <image> with <PAD> to make it tokenize correctly
@@ -602,13 +643,23 @@ def main(args):
                 )
             )
         elif dataset_config.type == 'UltraChatDataset':
-                dataset = UltraChatDataset(
-                    data_root=dataset_config.data_root,
-                    item_processor=UltraChatItemProcessor(),
-                    seed=args.seed,
-                    num_processes=dist.get_world_size(),
-                    process_rank=dist.get_rank(),
-                )
+            dataset = UltraChatDataset(
+                data_root=dataset_config.data_root,
+                item_processor=UltraChatItemProcessor(),
+                seed=args.seed,
+                num_processes=dist.get_world_size(),
+                process_rank=dist.get_rank(),
+            )
+        elif dataset_config.type == 'JourneyDBDataset':
+            dataset = JourneyDBDataset(
+                data_root=dataset_config.data_root,
+                annotation_path=dataset_config.annotation_path,
+                item_processor=JourneyDBItemProcessor(
+                    image_transform,
+                    args.text_dropout_prob,
+                    dataset_config.prompt_type,
+                ),
+            )
         else:
             raise NotImplementedError(f'dataset type: {dataset_config.type} is not implemented.')
         
@@ -618,7 +669,7 @@ def main(args):
     if config.use_iterable_dataset:
         # convert map-style dataset to iterable dataset
         for i, dataset in enumerate(datasets):
-            if isinstance(dataset, torchdata.Dataset):
+            if not isinstance(dataset, torchdata.IterableDataset):
                 datasets[i] = ToIterableDataset(dataset)
         sampler = None
         dataset = MixIterDataset(datasets, data_weights)

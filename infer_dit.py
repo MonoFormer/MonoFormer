@@ -64,7 +64,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--num_gpus", type=int, default=1)
     parser.add_argument("--ckpt", type=str, required=True)
-    parser.add_argument("--vae_pretrained_path", type=str)
+    parser.add_argument("--vae_pretrained_path", type=str, default='stabilityai/sd-vae-ft-mse')
     parser.add_argument("--ema", action="store_true")
     parser.add_argument("--resolution", type=int, default=256, choices=[256, 512, 1024])
     args = parser.parse_args()

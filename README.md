@@ -12,7 +12,7 @@
 **News**:
 
 - [9/24] We released the training code and inference code.
-- [9/24] We released **MonoFormer: One Transformer for Both Diffusion and Autoregression**. Checkout our Arxiv [paper]().
+- [9/24] We released **MonoFormer: One Transformer for Both Diffusion and Autoregression**. Checkout our [paper](https://arxiv.org/pdf/2409.16280) on ArXiv.
 
 ## Content
 
@@ -27,7 +27,7 @@
 
 ## Todo
 - [x] Release the training and inference code for class-conditional generation.
-- [ ] Release the training code for text-to-image generation.
+- [x] Release the code for text-to-image generation.
 - [ ] Release the model weights.
 - [ ] Support interleaved multi-modal outputs.
 
@@ -98,15 +98,12 @@ ToDo
 Inference for image generation:
 
 ```bash
-ckpt='results/monoformer_imagenet_res256_bf16_bs32_lr1e-4/checkpoint-50000'
-vae_pretrained_path='stabilityai/sd-vae-ft-mse'
-CUDA_VISIBLE_DEVICES=0 torchrun --master_port 39500 --nproc_per_node 1 infer_dit.py --ckpt $ckpt --resolution 256 --vae_pretrained_path $vae_pretrained_path --ema
+CUDA_VISIBLE_DEVICES=0 torchrun --master_port 39500 --nproc_per_node 1 infer_dit.py --ckpt $ckpt --resolution 256 --ema
 ```
 
 Inferece for text generation:
 
 ```bash
-ckpt='results/monoformer_ultrachat_journeydb_res256_bf16_bs32_lr1e-4/checkpoint-50000'
 CUDA_VISIBLE_DEVICES=0 torchrun --master_port 39500 --nproc_per_node 1 infer_llm.py --ckpt $ckpt
 ```
 

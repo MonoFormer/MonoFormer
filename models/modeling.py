@@ -102,7 +102,6 @@ class MonoFormerModel(LlamaModel):
         cache_position: Optional[torch.LongTensor] = None,
         c_embeds: Optional[torch.LongTensor] = None,
         c_embeds_mask: Optional[torch.LongTensor] = None,
-        image_token_spans: Optional[torch.LongTensor] = None,
     ) -> Union[Tuple, BaseModelOutputWithPast]:
         
         output_attentions = output_attentions if output_attentions is not None else self.config.output_attentions
@@ -140,8 +139,7 @@ class MonoFormerModel(LlamaModel):
         if position_ids is None:
             position_ids = cache_position.unsqueeze(0)
 
-        # from IPython import embed; embed()
-        # NOTE: currently, not support flash-attention for bi-directional attention for image tokens
+        # NOTE: currently, do not support flash-attention for bi-directional attention for image tokens
         if self.config.use_flash_attn and self.config.use_bi_attn_img_tokens:
             raise NotImplementedError('Not implemented for bi-directional attention for image tokens with FlashAttention')
         
@@ -150,20 +148,8 @@ class MonoFormerModel(LlamaModel):
         # TODO: do not apply to multi-image cases
         if self.config.use_bi_attn_img_tokens and c_embeds_mask is not None:
             mask_length = c_embeds_mask.shape[-1]
-            # causal_mask[:, :, mask_length:mask_length] = c_embeds_mask[:, None, None, :].eq(1.0).repeat(1, 1, mask_length, 1)
             image_attn_mask = ~torch.logical_and(c_embeds_mask[:, None, None, :].repeat(1, 1, mask_length, 1).eq(1.0), c_embeds_mask[:, None, None, :].repeat(1, 1, mask_length, 1).transpose(2, 3).eq(1.0))
             causal_mask = causal_mask[..., :mask_length, :mask_length] * image_attn_mask
-
-        use_hybrid_attn_mask = getattr(self.config, 'use_hybrid_attn_mask', None)
-        if image_token_spans is not None and use_hybrid_attn_mask:
-            causal_self_attn_mask = causal_mask.clone()
-            for bid, span_this_batch in enumerate(image_token_spans):
-                if span_this_batch:
-                    for span_this_image in span_this_batch:
-                        if span_this_image[1] < causal_self_attn_mask.shape[-1]:
-                            causal_self_attn_mask[bid, :, span_this_image[0]:span_this_image[1], :span_this_image[0]] = torch.finfo(inputs_embeds.dtype).min
-        else:
-            causal_self_attn_mask = None
         
         # embed positions
         hidden_states = inputs_embeds
@@ -172,13 +158,6 @@ class MonoFormerModel(LlamaModel):
         all_hidden_states = () if output_hidden_states else None
         all_self_attns = () if output_attentions else None
         next_decoder_cache = None
-        
-        # if c_embeds is not None:
-        #     if self.config.decoder_t_embed == 'add_before_decoder':
-        #         hidden_states = hidden_states + c_embeds.unsqueeze(1) * c_embeds_mask.unsqueeze(2)
-        #     elif self.config.decoder_t_embed == 'adaln_before_decoder':
-        #         scale, shift = c_embeds.chunk(2, dim=1)
-        #         hidden_states = modulate(hidden_states, scale, shift, c_embeds_mask)
 
         for layer_idx, decoder_layer in enumerate(self.layers):
             if output_hidden_states:
@@ -186,24 +165,17 @@ class MonoFormerModel(LlamaModel):
             
             if c_embeds_mask is not None:
                 if self.config.use_pos_embed and not self.config.add_pos_embed_each_layer and layer_idx == 0:
-                    try:
-                        # in case where image tokens are trunctated in the end
-                        temp_c_embeds_mask = torch.cat([c_embeds_mask, torch.zeros(c_embeds_mask.shape[0], 1, device=c_embeds_mask.device)], dim=1)
-                        indices = torch.where((temp_c_embeds_mask[:, 1:] - temp_c_embeds_mask[:, :-1]) != 0)
-                        # indices = torch.where((c_embeds_mask[:, 1:] - c_embeds_mask[:, :-1]) != 0)
-                        for j in range(0, len(indices[0]), 2):
-                            batch_idx = indices[0][j]
-                            start_idx = indices[1][j] + 1
-                            end_idx = min(indices[1][j+1] + 1, hidden_states.shape[1]-1)
-                            hidden_states[batch_idx, start_idx:end_idx] = hidden_states[batch_idx, start_idx:end_idx] + self.pos_embed[0, :end_idx-start_idx]
-                    except:
-                            # from torch import distributed as dist
-                            # if dist.get_rank() == 0:
-                            from IPython import embed; embed()
-                            # dist.barrier()
+                    # in case where image tokens are trunctated in the end
+                    temp_c_embeds_mask = torch.cat([c_embeds_mask, torch.zeros(c_embeds_mask.shape[0], 1, device=c_embeds_mask.device)], dim=1)
+                    indices = torch.where((temp_c_embeds_mask[:, 1:] - temp_c_embeds_mask[:, :-1]) != 0)
+
+                    for j in range(0, len(indices[0]), 2):
+                        batch_idx = indices[0][j]
+                        start_idx = indices[1][j] + 1
+                        end_idx = min(indices[1][j+1] + 1, hidden_states.shape[1]-1)
+                        hidden_states[batch_idx, start_idx:end_idx] = hidden_states[batch_idx, start_idx:end_idx] + self.pos_embed[0, :end_idx-start_idx]
                 
                 if self.config.use_pos_embed and self.config.add_pos_embed_each_layer:
-                    # from IPython import embed; embed()
                     indices = torch.where((c_embeds_mask[:, 1:] - c_embeds_mask[:, :-1]) != 0)
                     for j in range(0, len(indices[0]), 2):
                         batch_idx = indices[0][j]
@@ -229,17 +201,12 @@ class MonoFormerModel(LlamaModel):
                 elif self.config.decoder_t_embed == 'adaln_before_decoder' and layer_idx == 0:
                     scale, shift = c_embeds.chunk(2, dim=1)
                     hidden_states = modulate(hidden_states, scale, shift, c_embeds_mask)
-
-            if layer_idx % 2 == 0 and causal_self_attn_mask is not None:
-                attn_mask = causal_self_attn_mask
-            else:
-                attn_mask = causal_mask
             
             if self.gradient_checkpointing and self.training:
                 layer_outputs = self._gradient_checkpointing_func(
                     decoder_layer.__call__,
                     hidden_states,
-                    attn_mask,
+                    causal_mask,
                     position_ids,
                     past_key_values,
                     output_attentions,
@@ -251,7 +218,7 @@ class MonoFormerModel(LlamaModel):
             else:
                 layer_outputs = decoder_layer(
                     hidden_states,
-                    attention_mask=attn_mask,
+                    attention_mask=causal_mask,
                     position_ids=position_ids,
                     past_key_value=past_key_values,
                     output_attentions=output_attentions,
@@ -283,6 +250,7 @@ class MonoFormerModel(LlamaModel):
 
         if not return_dict:
             return tuple(v for v in [hidden_states, next_cache, all_hidden_states, all_self_attns] if v is not None)
+        
         return BaseModelOutputWithPast(
             last_hidden_state=hidden_states,
             past_key_values=next_cache,

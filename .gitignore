@@ -33,3 +33,5 @@ MANIFEST
 eval/
 logs/
 results/
+
+notebooks/
