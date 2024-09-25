@@ -16,7 +16,6 @@ import torch
 import torch.distributed as dist
 from diffusion import create_diffusion
 from diffusers.models import AutoencoderKL
-import fairscale.nn.model_parallel.initialize as fs_init
 from tqdm import tqdm
 import os
 from PIL import Image
@@ -25,7 +24,7 @@ import math
 import argparse
 from config import read_config_from_file
 from transformers import AutoTokenizer
-from MonoFormer.models.monoformer import LlamaDitForCausalLM
+from models import MonoFormerForCausalLM
 from constants import DEFAULT_IMAGE_START_TOKEN, DEFAULT_IMAGE_END_TOKEN, DEFAULT_PAD_TOKEN, DEFAULT_IMAGE_TOKEN
 import transformers
 from typing import List
@@ -110,7 +109,7 @@ def main(args):
     seed = args.global_seed * dist.get_world_size() + rank
     torch.manual_seed(seed)
     torch.cuda.set_device(device)
-    fs_init.initialize_model_parallel(dist.get_world_size())
+
     print(f"Starting rank={rank}, seed={seed}, world_size={dist.get_world_size()}.")
 
     latent_size = args.image_size // 8
@@ -121,9 +120,9 @@ def main(args):
         print(json.dumps(cfg, indent=2))
 
     if args.ema:
-        model = LlamaDitForCausalLM.from_pretrained(os.path.join(args.ckpt, 'ema'), torch_dtype=torch.float32)
+        model = MonoFormerForCausalLM.from_pretrained(os.path.join(args.ckpt, 'ema'), torch_dtype=torch.float32)
     else:
-        model = LlamaDitForCausalLM.from_pretrained(args.ckpt)
+        model = MonoFormerForCausalLM.from_pretrained(args.ckpt)
     
     tokenizer = AutoTokenizer.from_pretrained(args.ckpt)
     # tokenizer.chat_template = "{% for message in messages %}\n{% if message['role'] == 'user' %}\n{{ '<|user|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'system' %}\n{{ '<|system|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'assistant' %}\n{{ '<|assistant|>\n'  + message['content'] + eos_token }}\n{% endif %}\n{% if loop.last and add_generation_prompt %}\n{{ '<|assistant|>' }}\n{% endif %}\n{% endfor %}"
@@ -232,6 +231,6 @@ if __name__ == "__main__":
     parser.add_argument("--imagenet_labels_path", type=str)
     parser.add_argument("--resolution", type=int, default=256)
     parser.add_argument("--ema", action="store_true")
-    parser.add_argument("--vae_pretrained_path", type=str)
+    parser.add_argument("--vae_pretrained_path", type=str, default='stabilityai/sd-vae-ft-mse')
     args = parser.parse_args()
     main(args)

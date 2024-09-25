@@ -113,7 +113,7 @@ def main():
         tokenizer.chat_template = cfg.get('chat_template', DEFAULT_CHAT_TEMPLATE)
     
     # begin generation
-    prompt = "Please generate an image of goldfish."
+    prompt = "Please generate an image of beach wagon"
 
     if use_chat_template:
         conversations = [

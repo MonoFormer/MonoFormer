@@ -11,12 +11,14 @@
 
 **News**:
 
+- [9/25] We released the model weights for class-conditional generation on ImageNet.
 - [9/24] We released the training code and inference code.
 - [9/24] We released **MonoFormer: One Transformer for Both Diffusion and Autoregression**. Checkout our [paper](https://arxiv.org/pdf/2409.16280) on ArXiv.
 
 ## Content
 
 - [Installation](#installation)
+- [Model Zoo](#model-zoo)
 - [Training](#training)
 - [Inference](#inference)
 - [Sampling](#sampling)
@@ -24,11 +26,11 @@
 - [Acknowledgement](#acknowledgement)
 
 
-
 ## Todo
 - [x] Release the training and inference code for class-conditional generation.
 - [x] Release the code for text-to-image generation.
-- [ ] Release the model weights.
+- [x] Release the model weights for ImageNet generation.
+- [ ] Release the model weights for text-to-image generation.
 - [ ] Support interleaved multi-modal outputs.
 
 
@@ -48,6 +50,15 @@ conda create -n monoformer python=3.9 -y
 conda activate monoformer
 pip install -r requirements.txt
 ```
+
+## Model Zoo
+
+
+| Resolution | Dataset              | Tasks                                             | Checkpoint                                                                           |
+| ---------- | -------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| 256        | ImageNet             | class-conditional generation                      | [MonoFormer_ImageNet_256](https://huggingface.co/MonoFormer/MonoFormer_ImageNet_256) |
+| 256        | JourneyDB, UltraChat | text-to-image generation, text-to-text generation | To be released                                                                       |
+
 
 ## Training
 
@@ -106,7 +117,7 @@ torchrun --nproc_per_node 8 train.py \
 
 ### Run in Jupyter Notebook
 
-ToDo
+Please refer to [notebooks/infer_dit.ipynb](./notebooks/infer_dit.ipynb) for inference in Jupyter Notebook.
 
 ### CLI Inference
 
