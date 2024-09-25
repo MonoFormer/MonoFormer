@@ -68,7 +68,7 @@ We initialize the LLM using [TinyLLama](https://huggingface.co/TinyLlama/TinyLla
 
 We have provided training configurations for various datasets and tasks in [./configs](./configs/). You can modify these configurations or create your own for training. All training scripts are located in [./scripts](./scripts/).
 
-For class-conditional generation on the ImageNet dataset:
+Train on ImageNet dataset for class-conditional image generation:
 
 ```bash
 torchrun --nproc_per_node 8 train.py \
@@ -84,6 +84,21 @@ torchrun --nproc_per_node 8 train.py \
     --config_file configs/train_imagenet.py
 ```
 
+Train on mixture of JourneyDB and UltraChat dataset for text-to-image generation and text-to-text generation:
+
+```bash
+torchrun --nproc_per_node 8 train.py \
+    --output_dir results/monoformer_journeydb_ultrachat \
+    --lr 1e-4 \
+    --batch_size_per_gpu 16 \
+    --gradient_accumulation_steps 2 \
+    --max_grad_norm 2.0 \
+    --max_steps 500000 \
+    --checkpointing_steps 50000 --log_steps 100 \
+    --mixed_precision bf16 --grad_precision fp32 \
+    --resolution 256 \
+    --config_file configs/train_journeydb_ultrachat_9_1.py
+```
 
 ## Inference
 

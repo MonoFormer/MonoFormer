@@ -28,10 +28,12 @@ MANIFEST
 
 *.npz
 *.pb
+output_image.png
 
 # Experiment directory
 eval/
 logs/
 results/
+samples/
 
 notebooks/
