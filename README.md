@@ -54,10 +54,12 @@ pip install -r requirements.txt
 ## Model Zoo
 
 
-| Resolution | Dataset              | Tasks                                             | Checkpoint                                                                           |
-| ---------- | -------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| 256        | ImageNet             | class-conditional generation                      | [MonoFormer_ImageNet_256](https://huggingface.co/MonoFormer/MonoFormer_ImageNet_256) |
-| 256        | JourneyDB, UltraChat | text-to-image generation, text-to-text generation | To be released                                                                       |
+
+| Resolution | Dataset              | Checkpoint                                                                           |
+| ---------- | -------------------- | ------------------------------------------------------------------------------------ |
+| 256        | ImageNet             | [MonoFormer_ImageNet_256](https://huggingface.co/MonoFormer/MonoFormer_ImageNet_256) |
+| 256        | JourneyDB, UltraChat | To be released                                                                       |
+
 
 
 ## Training
