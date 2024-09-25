@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![ArXiv](https://img.shields.io/badge/ArXiv-<2408.>-<COLOR>.svg)](https://arxiv.org/) [![Webpage](https://img.shields.io/badge/Project-MonoFormer-<COLOR>.svg)](https://monoformer.github.io/) [![Github](https://img.shields.io/badge/Github-MonoFormer-<COLOR>.svg?logo=Github)](https://github.com/monoformer/MonoFormer) 
+[![ArXiv](https://img.shields.io/badge/ArXiv-<2409.16280>-<COLOR>.svg)](https://arxiv.org/pdf/2409.16280) [![Webpage](https://img.shields.io/badge/Project-MonoFormer-<COLOR>.svg)](https://monoformer.github.io/) [![Github](https://img.shields.io/badge/Github-MonoFormer-<COLOR>.svg?logo=Github)](https://github.com/monoformer/MonoFormer) 
 
 </div>
 
@@ -27,9 +27,9 @@
 
 ## Todo
 - [x] Release the training and inference code for class-conditional generation.
-- [] Release the training code for text-to-image generation.
-- [] Release the model weights.
-- [] Support interleaved multi-modal outputs.
+- [ ] Release the training code for text-to-image generation.
+- [ ] Release the model weights.
+- [ ] Support interleaved multi-modal outputs.
 
 
 ## Installation
@@ -134,8 +134,8 @@ torchrun --nnodes=1 --nproc_per_node=8 sample_ddp.py --ckpt $ckpt_dir \
 @article{zhao2024monoformer,
   title={MonoFormer: One Transformer for Both Diffusion and Autoregression},
   author={Zhao, Chuyang and Song, Yuxing and Wang, Wenhao and Feng, Haocheng and Ding, Errui and Sun, Yifan and Xiao, Xinyan and Wang, Jingdong},
-  year={2024},
-  journal={arXiv preprint arXiv:},
+  journal={arXiv preprint arXiv:2409.16280},
+  year={2024}
 }
 ```
 
