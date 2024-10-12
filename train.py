@@ -47,15 +47,13 @@ from transformers import AutoTokenizer, AutoConfig
 
 from data import MixIterDataset, ImageNetDataset, JourneyDBDataset, UltraChatDataset, LLaVAFinetuneDataset, ToIterableDataset
 from diffusion import create_diffusion
-from imgproc import center_crop_arr, resize_and_pad_image
+from imgproc import center_crop_arr
 
 from config import read_config_from_file
 from models import MonoFormerForCausalLM
 
 from constants import DEFAULT_PAD_TOKEN, IGNORE_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IMAGE_START_TOKEN, DEFAULT_IMAGE_END_TOKEN
-import transformers
-import base64
-import io
+
 
 
 logger = logging.getLogger(__name__)
