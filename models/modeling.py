@@ -7,7 +7,6 @@ from torch import nn
 from transformers import LlamaModel
 from transformers.modeling_outputs import BaseModelOutputWithPast
 from transformers.cache_utils import StaticCache, DynamicCache, Cache
-from transformers.models.llama.modeling_llama import LlamaDecoderLayer
 
 
 def modulate(x, shift, scale, mask):
@@ -183,14 +182,8 @@ class MonoFormerModel(LlamaModel):
                         end_idx = indices[1][j+1] + 1
                         hidden_states[batch_idx, start_idx:end_idx] = hidden_states[batch_idx, start_idx:end_idx] + self.pos_embed[0, :end_idx-start_idx]
             
-            adaln_inputs = None
-            adaln_inputs_mask = None
             if c_embeds is not None:
-                if self.config.decoder_t_embed == 'adaln_at_each_layer':
-                    # c_embeds: (num_decoder_layers, batch_size, hidden_size * 6), c_embeds_mask: (batch_size, seq_len)
-                    adaln_inputs = c_embeds[layer_idx]  # (batch_size, hidden_size * 6)
-                    adaln_inputs_mask = c_embeds_mask  # (batch_size, seq_len)
-                elif self.config.decoder_t_embed == 'add_at_each_layer':
+                if self.config.decoder_t_embed == 'add_at_each_layer':
                     # NOTE: if not use adaln, we directly add condition embedding to hidden states
                     # c_embeds: (batch_size, hidden_size), c_embeds_mask: (batch_size, seq_len)
                     hidden_states = hidden_states + c_embeds[layer_idx].unsqueeze(1) * c_embeds_mask.unsqueeze(2)
@@ -212,8 +205,6 @@ class MonoFormerModel(LlamaModel):
                     output_attentions,
                     use_cache,
                     cache_position,
-                    adaln_inputs,
-                    adaln_inputs_mask,
                 )
             else:
                 layer_outputs = decoder_layer(
@@ -224,8 +215,6 @@ class MonoFormerModel(LlamaModel):
                     output_attentions=output_attentions,
                     use_cache=use_cache,
                     cache_position=cache_position,
-                    adaln_inputs=adaln_inputs,
-                    adaln_inputs_mask=adaln_inputs_mask,
                 )
 
             hidden_states = layer_outputs[0]

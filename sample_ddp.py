@@ -71,12 +71,14 @@ def preprocess_single_inputs(tokenizer: transformers.PreTrainedTokenizer, inputs
 
     attention_mask = input_ids.ne(tokenizer.pad_token_id)
 
-    noise_image_indices = [[0] for _ in range(len(input_ids))]
+    flags = [[0] for _ in range(len(input_ids))]
+    images = [[] for _ in range(len(input_ids))]
  
     return {
         'input_ids': input_ids.to(device),
         'attention_mask': attention_mask.to(device),
-        'noise_image_indices': noise_image_indices,
+        'flags': flags,
+        'images': images,
     }
 
 

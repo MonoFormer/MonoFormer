@@ -11,6 +11,7 @@
 
 **News**:
 
+- [10/13] MonoFormer now supports **interleaved multi-modal data** and **multi-image inputs and outputs** for both **image understanding and generation**. The legacy single-image generation codebase has been moved to the [single-image branch]().
 - [9/25] We released the model weights for class-conditional generation on ImageNet.
 - [9/24] We released the training code and inference code.
 - [9/24] We released **MonoFormer: One Transformer for Both Diffusion and Autoregression**. Checkout our [paper](https://arxiv.org/pdf/2409.16280) on ArXiv.
@@ -30,8 +31,10 @@
 - [x] Release the training and inference code for class-conditional generation.
 - [x] Release the code for text-to-image generation.
 - [x] Release the model weights for ImageNet generation.
+- [x] Support interleaved multi-modal outputs.
+- [x] Support image understanding tasks with CLIP or VAE as visual encoder.
+- [x] Support multi-images inputs and outputs for understanding or diffusion generation.
 - [ ] Release the model weights for text-to-image generation.
-- [ ] Support interleaved multi-modal outputs.
 
 
 ## Installation
@@ -66,7 +69,7 @@ pip install -r requirements.txt
 
 1. Prepare dataset
 
-MonoFormer is trained on [ImageNet]((https://image-net.org/download.php)) for class-conditional image generation, [JourneyDB](https://github.com/JourneyDB/JourneyDB) for text-to-image generation, and [UltraChat](https://huggingface.co/datasets/stingning/ultrachat) for text-to-text generation.
+MonoFormer is trained on [ImageNet]((https://image-net.org/download.php)) for class-conditional image generation, [JourneyDB](https://github.com/JourneyDB/JourneyDB) for text-to-image generation, [UltraChat](https://huggingface.co/datasets/stingning/ultrachat) for text-to-text generation, and [LLaVA Instruction Tuning](https://github.com/haotian-liu/LLaVA) for multi-modal understanding.
 Please prepare the appropriate dataset for each respective task.
 
 For detailed guide on how to organize the data and how to prepare your own datasets for training, please refer to [data/README.md](./data/README.md).
@@ -113,6 +116,22 @@ torchrun --nproc_per_node 8 train.py \
     --config_file configs/train_journeydb_ultrachat_9_1.py
 ```
 
+Train on mixture of JourneyDB and LLaVA instrunction tuning dataset for text-to-image generation and image understanding:
+
+```bash
+torchrun --nproc_per_node 8 train.py \
+    --output_dir results/monoformer_llava_journeydb \
+    --lr 1e-4 \
+    --batch_size_per_gpu 16 \
+    --gradient_accumulation_steps 2 \
+    --max_grad_norm 2.0 \
+    --max_steps 500000 \
+    --checkpointing_steps 50000 --log_steps 100 \
+    --mixed_precision bf16 --grad_precision fp32 \
+    --resolution 256 \
+    --config_file configs/train_llava_journeydb.py
+```
+
 ## Inference
 
 ![Demo](.github/demo.png)
@@ -129,10 +148,10 @@ Inference for image generation:
 CUDA_VISIBLE_DEVICES=0 torchrun --master_port 39500 --nproc_per_node 1 infer_dit.py --ckpt $ckpt --resolution 256 --ema
 ```
 
-Inferece for text generation:
+Inferece for text generation or multi-modal generation:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 torchrun --master_port 39500 --nproc_per_node 1 infer_llm.py --ckpt $ckpt
+CUDA_VISIBLE_DEVICES=0 torchrun --master_port 39500 --nproc_per_node 1 infer_mllm.py --ckpt $ckpt
 ```
 
 ## Sampling

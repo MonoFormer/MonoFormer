@@ -35,4 +35,6 @@ eval/
 logs/
 results/
 samples/
+samples
 
+core*

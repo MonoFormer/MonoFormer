@@ -90,7 +90,7 @@ class UltraChatDataset(IterableDataset):
 
 
 class JourneyDBDataset(Dataset):
-    def __init__(self, data_root, annotation_path, item_processor, shuffle=True):
+    def __init__(self, data_root, annotation_path, item_processor, shuffle=True, seed=0):
         self.data_root = data_root
         self.shuffle = shuffle
         self.item_processor = item_processor
@@ -105,7 +105,7 @@ class JourneyDBDataset(Dataset):
         
         self.annotations = annotations
         if self.shuffle:
-            self.rng = np.random.default_rng()
+            self.rng = np.random.default_rng(seed=seed)
             self.rng.shuffle(self.annotations)
 
     def __len__(self):
@@ -131,6 +131,34 @@ class JourneyDBDataset(Dataset):
             'image': image,
             'prompt': prompt,
             'caption': caption
+        })
+
+
+class LLaVAFinetuneDataset(Dataset):
+    def __init__(self, data_root, annotation_path, item_processor, shuffle=True, seed=0):
+        self.data_root = data_root
+        self.annotation = json.load(open(annotation_path, 'r'))
+        self.item_processor = item_processor
+        if shuffle:
+            self.rng = np.random.default_rng(seed=seed)
+            self.rng.shuffle(self.annotation)
+    
+    def __len__(self):
+        return len(self.annotation)
+
+    def __getitem__(self, idx):
+        if 'image' in self.annotation[idx]:
+            try:
+                image = Image.open(os.path.join(self.data_root, self.annotation[idx]['image'])).convert('RGB')
+            except Exception as e:
+                warnings.warn(f"{e}")
+                image = Image.new('RGB', (224, 224))
+        else:
+            image = None
+        
+        return self.item_processor({
+            'image': image,
+            'conversation': self.annotation[idx]['conversations'],
         })
 
 

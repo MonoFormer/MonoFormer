@@ -25,7 +25,7 @@ import math
 import argparse
 from config import read_config_from_file
 from transformers import AutoConfig, AutoTokenizer
-from MonoFormer.models.monoformer import LlamaDitForCausalLM
+from models import MonoFormerForCausalLM
 from constants import DEFAULT_IMAGE_START_TOKEN, DEFAULT_IMAGE_END_TOKEN, DEFAULT_PAD_TOKEN, DEFAULT_IMAGE_TOKEN
 import transformers
 from typing import List
@@ -84,12 +84,14 @@ def preprocess_single_inputs(tokenizer: transformers.PreTrainedTokenizer, inputs
 
     attention_mask = input_ids.ne(tokenizer.pad_token_id)
 
-    noise_image_indices = [[0] for _ in range(len(input_ids))]
+    flags = [[0] for _ in range(len(input_ids))]
+    images = [[] for _ in range(len(input_ids))]
  
     return {
         'input_ids': input_ids.to(device),
         'attention_mask': attention_mask.to(device),
-        'noise_image_indices': noise_image_indices,
+        'flags': flags,
+        'images': images,
     }
 
 
@@ -132,13 +134,12 @@ def main(args):
         print(json.dumps(cfg, indent=2))
 
     if args.ema:
-        model = LlamaDitForCausalLM.from_pretrained(os.path.join(args.ckpt, 'ema'), torch_dtype=torch.float32)
+        model = MonoFormerForCausalLM.from_pretrained(os.path.join(args.ckpt, 'ema'), torch_dtype=torch.float32)
     else:
-        model = LlamaDitForCausalLM.from_pretrained(args.ckpt)
+        model = MonoFormerForCausalLM.from_pretrained(args.ckpt)
     
     tokenizer = AutoTokenizer.from_pretrained(args.ckpt)
-    # tokenizer.chat_template = "{% for message in messages %}\n{% if message['role'] == 'user' %}\n{{ '<|user|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'system' %}\n{{ '<|system|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'assistant' %}\n{{ '<|assistant|>\n'  + message['content'] + eos_token }}\n{% endif %}\n{% if loop.last and add_generation_prompt %}\n{{ '<|assistant|>' }}\n{% endif %}\n{% endfor %}"
-    
+
     model.eval().cuda()
 
     vae = AutoencoderKL.from_pretrained(

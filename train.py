@@ -45,9 +45,9 @@ from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
 from transformers import AutoTokenizer, AutoConfig
 
-from data import MixIterDataset, ImageNetDataset, JourneyDBDataset, UltraChatDataset, ToIterableDataset
+from data import MixIterDataset, ImageNetDataset, JourneyDBDataset, UltraChatDataset, LLaVAFinetuneDataset, ToIterableDataset
 from diffusion import create_diffusion
-from imgproc import center_crop_arr
+from imgproc import center_crop_arr, resize_and_pad_image
 
 from config import read_config_from_file
 from models import MonoFormerForCausalLM
@@ -62,8 +62,8 @@ logger = logging.getLogger(__name__)
 
 
 class UltraChatItemProcessor:
-    def __init__(self):
-        pass
+    def __init__(self, tokenize_fn):
+        self.tokenize_fn = tokenize_fn
 
     def __call__(self, data_item: str):
         if isinstance(data_item, str):
@@ -75,9 +75,7 @@ class UltraChatItemProcessor:
                     'input': '',
                     'output': '',
                 }
-                return torch.empty(0), conversation, None
-        
-            # FIXME: currently, do not support multi-turn generation
+
             conversation = {}
             for i, conv in enumerate(data_item['data']):
                 if i % 2 == 0:
@@ -85,11 +83,24 @@ class UltraChatItemProcessor:
                 else:
                     conversation['output'] = conv
         
-        return torch.empty(0), conversation, None
+        conversation = [
+            {"role": "user", "content": conversation["input"]},
+            {"role": "assistant", "content": conversation["output"]},
+        ]
+
+        input_ids, labels = self.tokenize_fn(conversation)
+
+        images = []
+        x = torch.empty(0)
+        flags = []
+
+        return images, x, input_ids, labels, flags
 
 
 class ImageNetItemProcessor:
-    def __init__(self, transform, text_dropout_prob=0.1, annotation_path='./data/imagenet_labels.json'):
+    def __init__(self, tokenize_fn, tokenizer, transform, text_dropout_prob=0.1, annotation_path='./data/imagenet_labels.json'):
+        self.tokenize_fn = tokenize_fn
+        self.tokenizer = tokenizer
         self.image_transform = transform
         self.text_dropout_prob = text_dropout_prob
         self.annotation = json.load(open(annotation_path, 'r'))
@@ -109,8 +120,9 @@ class ImageNetItemProcessor:
         # apply prompt template
         inputs = [
             f'Please generate an image of {label}.',
-            f'{label}'
-            f'an image of {label}.'
+            f'{label}',
+            f'an image of {label}.',
+            f'an photo of {label}.',
         ]
 
         conversation = {
@@ -120,26 +132,32 @@ class ImageNetItemProcessor:
 
         # randomly convert some samples to unconditional generation
         if random.uniform(0., 1.) < self.text_dropout_prob and DEFAULT_IMAGE_TOKEN in conversation['output']:
-            # NOTE: this is a hacky to replace all tokens in the input with padding token, so that these tokens are masked by attention mask in the collator.
-            # but the number of tokens computed here is different from the number of tokens tokenized by tokenizer
-            num_input_tokens = len(conversation['input'].split()) + conversation['input'].count(' ')
-            conversation = {
-                'input': DEFAULT_PAD_TOKEN * num_input_tokens,
-                'output': DEFAULT_IMAGE_TOKEN + '\n',
-            }
+            input_ids = torch.tensor(self.tokenizer.convert_tokens_to_ids([self.tokenizer.bos_token, DEFAULT_IMAGE_START_TOKEN, DEFAULT_IMAGE_TOKEN, DEFAULT_IMAGE_END_TOKEN]))
+            labels = torch.ones_like(input_ids)
+        else:
+            # TODO: tokenizer can not properly tokenize '<|im_start|><image><|im_end|>', here we substitue <image> with <PAD> to make it tokenize properly
+            # then we substitue <image> back after tokenizing
+            conversation['input'] = conversation['input'].replace(DEFAULT_IMAGE_TOKEN, f'{DEFAULT_IMAGE_START_TOKEN}{DEFAULT_PAD_TOKEN}{DEFAULT_IMAGE_END_TOKEN}')
+            conversation['output'] = conversation['output'].replace(DEFAULT_IMAGE_TOKEN, f'{DEFAULT_IMAGE_START_TOKEN}{DEFAULT_PAD_TOKEN}{DEFAULT_IMAGE_END_TOKEN}')
+
+            conversation = [
+                {"role": "user", "content": conversation["input"]},
+                {"role": "assistant", "content": conversation["output"]},
+            ]
+
+            input_ids, labels = self.tokenize_fn(conversation)
         
-        noise_image_index = [0]
+        x = image
+        images = []
+        flags = [0]
 
-        # BUG: tokenizer can not properly tokenize '<|im_start|><image><|im_end|>', here we substitue <image> with <PAD> to make it tokenize correctly
-        # We substitue <image> back after tokenizing in collate function
-        conversation['input'] = conversation['input'].replace(DEFAULT_IMAGE_TOKEN, f'{DEFAULT_IMAGE_START_TOKEN}{DEFAULT_PAD_TOKEN}{DEFAULT_IMAGE_END_TOKEN}')
-        conversation['output'] = conversation['output'].replace(DEFAULT_IMAGE_TOKEN, f'{DEFAULT_IMAGE_START_TOKEN}{DEFAULT_PAD_TOKEN}{DEFAULT_IMAGE_END_TOKEN}')
-
-        return image, conversation, noise_image_index
+        return images, x, input_ids, labels, flags
 
 
 class JourneyDBItemProcessor:
-    def __init__(self, transform=None, text_dropout_prob=0.1, prompt_type='prompt', load_vae_feature=False):
+    def __init__(self, tokenize_fn, tokenizer, transform=None, text_dropout_prob=0.1, prompt_type='prompt', load_vae_feature=False):
+        self.tokenize_fn = tokenize_fn
+        self.tokenizer = tokenizer
         self.image_transform = transform
         self.text_dropout_prob = text_dropout_prob
         self.prompt_type = prompt_type
@@ -160,138 +178,154 @@ class JourneyDBItemProcessor:
         
         # randomly convert some samples to unconditional generation
         if random.uniform(0., 1.) < self.text_dropout_prob and DEFAULT_IMAGE_TOKEN in conversation['output']:
-            # NOTE: this is a hacky to replace all tokens in the input with padding token, so that these tokens are masked by attention mask in the collator.
-            # but the number of tokens computed here is different from the number of tokens tokenized by tokenizer
-            num_input_tokens = len(conversation['input'].split()) + conversation['input'].count(' ')
-            conversation = {
-                'input': DEFAULT_PAD_TOKEN * num_input_tokens,
-                'output': DEFAULT_IMAGE_TOKEN + '\n',
-            }
-        
-        # differentiate between image-generation and text-generation tasks
-        noise_image_index = [0]
-
-        # BUG: tokenizer can not properly tokenize '<|im_start|><image><|im_end|>', here we substitue <image> with <PAD> to make it tokenize correctly
-        # We substitue <image> back after tokenizing in collate function
-        conversation['input'] = conversation['input'].replace(DEFAULT_IMAGE_TOKEN, f'{DEFAULT_IMAGE_START_TOKEN}{DEFAULT_PAD_TOKEN}{DEFAULT_IMAGE_END_TOKEN}')
-        conversation['output'] = conversation['output'].replace(DEFAULT_IMAGE_TOKEN, f'{DEFAULT_IMAGE_START_TOKEN}{DEFAULT_PAD_TOKEN}{DEFAULT_IMAGE_END_TOKEN}')
-
-        return image, conversation, noise_image_index
-
-
-
-class DataCollatorForCausalLM(object):
-    def __init__(self, tokenizer: transformers.PreTrainedTokenizer, source_max_len: int, target_max_len: int, train_on_source: bool, predict_with_generate: bool, apply_chat_template: bool = True):
-        """
-        Args:
-            train_on_source (bool): whether use the source part, i.e., prompt or user input, as the training data.
-        """
-        self.tokenizer = tokenizer
-        self.source_max_len = source_max_len
-        self.target_max_len = target_max_len
-        self.train_on_source = train_on_source
-        self.predict_with_generate = predict_with_generate
-        self.apply_chat_template = apply_chat_template
-
-    def __call__(self, samples):
-        images = [x[0] for x in samples]
-        conversations = [x[1] for x in samples]
-        noise_image_indices = [x[2] for x in samples]
-
-        if self.apply_chat_template:
-            conversations_standard = []
-            for conv in conversations:
-                new_conv = [
-                    {"role": "user", "content": conv['input']},
-                    {"role": "assistant", "content": conv['output']}
-                ]
-                conversations_standard.append(new_conv)
-            conversations_standard = [self.tokenizer.apply_chat_template(conv, tokenize=False, add_generation_prompt=False) for conv in conversations_standard]
-
-            sources = []
-            targets = []
-            
-            # TODO: this is a hack, currently we only support these two chat templates
-            if "<|user|>" in self.tokenizer.chat_template:
-                conv_roles = ["<|user|>", "<|assistant|>"]
-            elif "### Human:" in self.tokenizer.chat_template:
-                conv_roles = ["### Human:", "### Assistant:"]
-            
-            for conv in conversations_standard:
-                split_inds = []
-                index = min(conv.find(conv_roles[1]), conv.find(conv_roles[0]))
-                while index != -1:
-                    split_inds.append(index)
-                    index = conv.find(conv_roles[1], index + 1)
-                split_inds.append(len(conv))
-                split_inds[0] = 0
-                assert (len(split_inds)-1) % 2 == 0, f"The number of roles should be even: {len(split_inds)}"
-                for i in range(len(split_inds)-1):
-                    if i % 2 == 0:
-                        sources.append(conv[split_inds[i]:split_inds[i+1]])
-                    else:
-                        targets.append(conv[split_inds[i]:split_inds[i+1]])
+            input_ids = torch.tensor(self.tokenizer.convert_tokens_to_ids([self.tokenizer.bos_token, DEFAULT_IMAGE_START_TOKEN, DEFAULT_IMAGE_TOKEN, DEFAULT_IMAGE_END_TOKEN]))
+            labels = torch.ones_like(input_ids)
         else:
-            sources = [f"{self.tokenizer.bos_token}{example['input']}" for example in conversations]
-            targets = [f"{example['output']}{self.tokenizer.eos_token}" for example in conversations]
+            # TODO: tokenizer can not properly tokenize '<|im_start|><image><|im_end|>', here we substitue <image> with <PAD> to make it tokenize properly
+            # then we substitue <image> back after tokenizing
+            conversation['input'] = conversation['input'].replace(DEFAULT_IMAGE_TOKEN, f'{DEFAULT_IMAGE_START_TOKEN}{DEFAULT_PAD_TOKEN}{DEFAULT_IMAGE_END_TOKEN}')
+            conversation['output'] = conversation['output'].replace(DEFAULT_IMAGE_TOKEN, f'{DEFAULT_IMAGE_START_TOKEN}{DEFAULT_PAD_TOKEN}{DEFAULT_IMAGE_END_TOKEN}')
+
+            conversation = [
+                {"role": "user", "content": conversation["input"]},
+                {"role": "assistant", "content": conversation["output"]},
+            ]
+
+            input_ids, labels = self.tokenize_fn(conversation)
         
-        # Tokenize
-        tokenized_sources_with_prompt = self.tokenizer(
-            sources,
-            max_length=self.source_max_len,
-            truncation=True,
-            add_special_tokens=False,
-        )
-        tokenized_targets = self.tokenizer(
-            targets,
-            max_length=self.target_max_len,
-            truncation=True,
-            add_special_tokens=False,
-        )
-        
-        # Build the input and labels for causal LM
-        input_ids = []
-        labels = []
-        for tokenized_source, tokenized_target in zip(
-            tokenized_sources_with_prompt['input_ids'],
-            tokenized_targets['input_ids']
-        ):
-            if not self.predict_with_generate:
-                input_ids.append(torch.tensor(tokenized_source + tokenized_target))
-                if not self.train_on_source:
-                    labels.append(
-                        torch.tensor([IGNORE_INDEX for _ in range(len(tokenized_source))] + copy.deepcopy(tokenized_target))
-                    )
-                else:
-                    labels.append(torch.tensor(copy.deepcopy(tokenized_source + tokenized_target)))
+        x = image
+        images = []
+        flags = [0]
+
+        return images, x, input_ids, labels, flags
+
+
+class LLaVAItemProcessor:
+    def __init__(self, tokenize_fn, tokenizer):
+        self.tokenize_fn = tokenize_fn
+        self.tokenizer = tokenizer
+    
+    def __call__(self, data_item: Dict):
+        image = data_item['image']
+        x = torch.empty(0)
+        if image is not None:
+            images = [image]
+            flags = [1]
+        else:
+            images = []
+            flags = []
+
+        conversation = []
+        for conv in data_item['conversation']:
+            if conv['from'] == 'human':
+                conversation.append({"role": "user", "content": conv['value']})
             else:
-                input_ids.append(torch.tensor(tokenized_source))
-        
-        # NOTE: this is a hack to substitue the <PAD> token after the image start token <|im_start|> with image token <image> back
-        im_start_token_id = self.tokenizer.convert_tokens_to_ids(DEFAULT_IMAGE_START_TOKEN)
-        image_token_id = self.tokenizer.convert_tokens_to_ids(DEFAULT_IMAGE_TOKEN)
-        for cur_input_ids in input_ids:
-            # NOTE: make sure only one image exists
-            for idx in torch.where(cur_input_ids == im_start_token_id):
-                if len(idx) != 0 and cur_input_ids[idx + 1] == self.tokenizer.pad_token_id:
-                    cur_input_ids[idx + 1] = image_token_id
+                conversation.append({"role": "assistant", "content": conv['value']})
 
-        # Apply padding
-        # TODO: we need to replace <image> token as the real image tokens (which may have different length),
-        # so padding is required afterwards, maybe here we do not need to apply padding.
-        input_ids = pad_sequence(input_ids, batch_first=True, padding_value=self.tokenizer.pad_token_id)
-        labels = pad_sequence(labels, batch_first=True, padding_value=IGNORE_INDEX) if not self.predict_with_generate else None
-        data_dict = {
-            'input_ids': input_ids,
-            'attention_mask':input_ids.ne(self.tokenizer.pad_token_id),
-        }
-        if labels is not None:
-            data_dict['labels'] = labels
+        input_ids, labels = self.tokenize_fn(conversation)
 
-        data_dict['images'] = images
-        data_dict['noise_image_indices'] = noise_image_indices
-        
-        return data_dict
+        return images, x, input_ids, labels, flags
+
+
+def tokenize_conversation(conversation, tokenizer, use_chat_template, source_max_len, target_max_len, train_on_source):
+    """
+    Tokenize a conversation.
+
+    Args:
+        conversation: should have the format of:
+            [
+                {"role": "user", "content": "..."}, 
+                {"role": "assistant", "content": "..."}, 
+                ...
+            ]
+        tokenizer: the tokenizer used to tokenize the conversation.
+        use_chat_template: whether to use chat template.
+        source_max_len: maximum length of the source sequence.
+        target_max_len: maximum length of the target sequence.
+        train_on_source: whether to train on source.
+    
+    Returns:
+        input_ids: the input ids of the conversation.
+        labels: the labels of the conversation.
+    """
+    sources = []
+    targets = []
+
+    if use_chat_template:
+        for conv in conversation:
+            conv_with_template = tokenizer.apply_chat_template([conv], tokenize=False, add_generation_prompt=False)
+            # TODO: currently, we omit processing the speaker signal for simplicity
+            if conv['role'] == 'user':
+                sources.append(conv_with_template)
+            else:
+                targets.append(conv_with_template)
+    else:
+        sources = [f"{tokenizer.bos_token}{conv['content']}" for conv in conversation if conv["role"] == "user"]
+        targets = [f"{conv['content']}{tokenizer.eos_token}" for conv in conversation if conv["role"] == "assistant"]
+    
+    # Tokenize
+    sources = tokenizer(
+        sources,
+        max_length=source_max_len,
+        truncation=True,
+        add_special_tokens=False,
+    )
+    targets = tokenizer(
+        targets,
+        max_length=target_max_len,
+        truncation=True,
+        add_special_tokens=False,
+    )
+
+    input_ids = []
+    labels = []
+
+    for source_ids, target_ids in zip(sources['input_ids'], targets['input_ids']):
+        input_ids.append(torch.tensor(source_ids + target_ids))
+        if not train_on_source:
+            labels.append(
+                torch.tensor([IGNORE_INDEX for _ in range(len(source_ids))] + copy.deepcopy(target_ids))
+            )
+        else:
+            labels.append(torch.tensor(copy.deepcopy(source_ids + target_ids)))
+    
+    input_ids = torch.cat(input_ids)
+    labels = torch.cat(labels)
+
+    # NOTE: this is a hack to substitue the <PAD> token after the image start token <|im_start|> with image token <image> back
+    im_start_token_id = tokenizer.convert_tokens_to_ids(DEFAULT_IMAGE_START_TOKEN)
+    image_token_id = tokenizer.convert_tokens_to_ids(DEFAULT_IMAGE_TOKEN)
+    
+    # NOTE: make sure only one image exists
+    for idx in torch.where(input_ids == im_start_token_id):
+        if len(idx) != 0 and input_ids[idx + 1] == tokenizer.pad_token_id:
+            input_ids[idx + 1] = image_token_id
+    
+    return input_ids, labels
+
+
+def default_collate_fn(samples, pad_token_id):
+    images = [x[0] for x in samples]
+    xs = [x[1] for x in samples]
+    input_ids = [x[2] for x in samples]
+    labels = [x[3] for x in samples]
+    flags = [x[4] for x in samples]
+
+    # Apply padding
+    input_ids = pad_sequence(input_ids, batch_first=True, padding_value=pad_token_id)
+    labels = pad_sequence(labels, batch_first=True, padding_value=IGNORE_INDEX)
+    data_dict = {
+        'input_ids': input_ids,
+        'attention_mask':input_ids.ne(pad_token_id),
+    }
+    if labels is not None:
+        data_dict['labels'] = labels
+
+    data_dict['x'] = xs
+    data_dict['images'] = images
+    data_dict['flags'] = flags
+
+    return data_dict
 
 
 def get_train_sampler(dataset, rank, world_size, batch_size, max_steps, resume_step, seed):
@@ -316,8 +350,7 @@ def get_train_sampler(dataset, rank, world_size, batch_size, max_steps, resume_s
 
 
 @torch.no_grad()
-# def update_ema(ema_model, model, decay=0.9999):
-def update_ema(ema_model, model, decay=0.5):
+def update_ema(ema_model, model, decay=0.9999):
     """
     Step the EMA model towards the current model.
     """
@@ -558,16 +591,18 @@ def main(args):
     #==================================================
     # Resume model weights from checkpoint if available
     #==================================================
-    if args.resume_from_checkpoint:
-        if args.resume_from_checkpoint != "latest":
-            # path = os.path.basename(args.resume_from_checkpoint)
-            path = args.resume_from_checkpoint
+    if args.resume_from_checkpoint or args.init_from_checkpoint:
+        if args.resume_from_checkpoint:
+            if args.resume_from_checkpoint != "latest":
+                path = args.resume_from_checkpoint
+            else:
+                # Get the most recent checkpoint
+                dirs = os.listdir(args.output_dir)
+                dirs = [d for d in dirs if d.startswith("checkpoint")]
+                dirs = sorted(dirs, key=lambda x: int(x.split("-")[1]))
+                path = dirs[-1] if len(dirs) > 0 else None
         else:
-            # Get the most recent checkpoint
-            dirs = os.listdir(args.output_dir)
-            dirs = [d for d in dirs if d.startswith("checkpoint")]
-            dirs = sorted(dirs, key=lambda x: int(x.split("-")[1]))
-            path = dirs[-1] if len(dirs) > 0 else None
+            path = args.init_from_checkpoint
         
         if path is not None:
             resume_path = os.path.join(args.output_dir, path)
@@ -583,6 +618,14 @@ def main(args):
     # setup fsdp, model weights will broadcast from main process to all processes
     model = setup_fsdp(model, mixed_precision=args.mixed_precision)
     model_ema = setup_fsdp(model_ema, mixed_precision=args.mixed_precision)
+
+    # NOTE: initailize vision modules after fsdp
+    if config.get('vision_encoder', None):
+        logger.info(f"Initializing vision encoder: {config.vision_encoder.name}")
+        model.initialize_vision_modules(config.vision_encoder.name, config.vision_encoder.pretrained_path, config.vision_encoder.get('args', {}))
+        model_ema.initialize_vision_modules(config.vision_encoder.name, config.vision_encoder.pretrained_path, config.vision_encoder.get('args', {}))
+        model.to(device)
+        model_ema.to(device)
 
     # default: 1000 steps, linear noise schedule
     diffusion = create_diffusion(timestep_respacing="")
@@ -630,6 +673,10 @@ def main(args):
     # Build dataset and dataloader
     #=============================
     image_transform = build_transforms(args.resolution)  # TODO: chage 
+    use_chat_template = config.get('use_chat_template', False)
+    train_on_source = not use_chat_template
+    train_on_source = config.get('train_on_source', train_on_source)
+    tokenize_fn = functools.partial(tokenize_conversation, tokenizer=tokenizer, use_chat_template=use_chat_template, source_max_len=config.source_max_length, target_max_len=config.tokenizer_max_length, train_on_source=train_on_source)
     
     datasets = []
     data_weights = []
@@ -638,6 +685,8 @@ def main(args):
             dataset = ImageNetDataset(
                 data_root=dataset_config.data_root,
                 item_processor=ImageNetItemProcessor(
+                    tokenize_fn,
+                    tokenizer,
                     image_transform,
                     args.text_dropout_prob,
                 )
@@ -655,10 +704,22 @@ def main(args):
                 data_root=dataset_config.data_root,
                 annotation_path=dataset_config.annotation_path,
                 item_processor=JourneyDBItemProcessor(
+                    tokenize_fn,
+                    tokenizer,
                     image_transform,
                     args.text_dropout_prob,
                     dataset_config.prompt_type,
                 ),
+            )
+        elif dataset_config.type == 'LLaVAFinetuneDataset':
+            dataset = LLaVAFinetuneDataset(
+                data_root=dataset_config.data_root,
+                annotation_path=dataset_config.annotation_path,
+                item_processor=LLaVAItemProcessor(
+                    tokenizer=tokenizer,
+                    tokenize_fn=tokenize_fn,
+                ),
+                seed=args.seed,
             )
         else:
             raise NotImplementedError(f'dataset type: {dataset_config.type} is not implemented.')
@@ -682,28 +743,14 @@ def main(args):
         # TODO: map-style dataset does not support weighted sampling currently
         sampler = get_train_sampler(dataset, rank=dist.get_rank(), world_size=dist.get_world_size(), batch_size=global_batch_size, max_steps=args.max_steps, resume_step=global_step, seed=args.seed)
 
-    use_chat_template = config.get('apply_chat_template', False)
-    if use_chat_template:
-        train_on_source = False
-    else:
-        train_on_source = True
-    
-    dataloader_collate_fn = DataCollatorForCausalLM(
-        tokenizer=tokenizer, 
-        source_max_len=config.source_max_length, 
-        target_max_len=config.tokenizer_max_length-config.source_max_length, 
-        train_on_source=train_on_source, 
-        predict_with_generate=False, 
-        apply_chat_template=use_chat_template
-    )
-    
+    collate_fn = functools.partial(default_collate_fn, pad_token_id=tokenizer.pad_token_id)
     loader = DataLoader(
         dataset,
         batch_size=args.batch_size_per_gpu,
         sampler=sampler,
         num_workers=args.num_workers,
         pin_memory=True,
-        collate_fn=dataloader_collate_fn,
+        collate_fn=collate_fn,
     )
 
     # Prepare models for training:
@@ -740,12 +787,14 @@ def main(args):
             for param_group in optimizer.param_groups:
                 param_group["lr"] = lr
 
-        x = [img.to(device, non_blocking=True) for img in data_dict['images']]
+        x = [img.to(device, non_blocking=True) for img in data_dict['x']]
+        images = [img_list for img_list in data_dict['images']]
         input_ids = data_dict['input_ids'].to(device)
         labels = data_dict['labels'].to(device)
         attention_mask = data_dict['attention_mask'].to(device)
-        noise_image_indices = data_dict['noise_image_indices']
+        flags = data_dict['flags']
 
+        # extract vae features for images to generate
         with torch.no_grad():
             x_new = [None] * len(x)
             imgs = []
@@ -754,28 +803,23 @@ def main(args):
                 if img.shape[0] == 3:
                     imgs.append(img)
                     img_inds.append(idx)
-                elif img.shape[0] == 8:
-                    # load extracted vae features
+                elif img.shape[0] == 8:  # expect vae features of shape (8, h, w)
                     img = DiagonalGaussianDistribution(img[None], True).sample().mul_(0.18215)[0].to(device)
                     x_new[idx] = img
-                elif img.shape[0] == 0:
-                    # no image
+                elif img.shape[0] == 0:  # no image
                     x_new[idx] = img
                 else:
                     raise RuntimeError(f"Unexpected image shape: {img.shape}")
+            
             # extract vae features
             if len(imgs) != 0:
                 imgs = vae.encode(torch.stack(imgs)).latent_dist.sample().mul_(0.18215).to(device)
                 for i, idx in enumerate(img_inds):
                     x_new[idx] = imgs[i]
+            
             x = x_new
 
         t = torch.randint(0, diffusion.num_timesteps, (len(x),), device=device)
-        # for image understanding task, where image is used for understanding rather than generaion, noise is not added
-        for i, noise_image_index in enumerate(noise_image_indices):
-            if noise_image_index == []:
-                t[i] = 0
-
         noise = [torch.randn_like(img_start) for img_start in x]
         x_t = [diffusion.q_sample(x[i][None], t[i: i + 1], noise=noise[i][None])[0] for i in range(len(x))]
 
@@ -784,8 +828,8 @@ def main(args):
                 input_ids=input_ids,
                 attention_mask=attention_mask,
                 labels=labels,
-                images=x,
-                noise_image_indices=noise_image_indices,
+                images=images,
+                flags=flags,
                 t=t,
                 x_t=x_t,
             )
@@ -982,6 +1026,14 @@ if __name__ == "__main__":
         help=(
             "Whether training should be resumed from a previous checkpoint. Use a path saved by"
             ' `--checkpointing_steps`, or `"latest"` to automatically select the last available checkpoint.'
+        ),
+    )
+    parser.add_argument(
+        "--init_from_checkpoint",
+        type=str,
+        default=None,
+        help=(
+            "Whether training should be initialized from a previous checkpoint. Note this does not load optimizer states and will start a new training."
         ),
     )
     parser.add_argument(
