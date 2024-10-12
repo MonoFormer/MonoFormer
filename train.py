@@ -109,7 +109,7 @@ class ImageNetItemProcessor:
         # apply prompt template
         inputs = [
             f'Please generate an image of {label}.',
-            f'{label}'
+            f'{label}',
             f'an image of {label}.'
         ]
 
@@ -316,8 +316,7 @@ def get_train_sampler(dataset, rank, world_size, batch_size, max_steps, resume_s
 
 
 @torch.no_grad()
-# def update_ema(ema_model, model, decay=0.9999):
-def update_ema(ema_model, model, decay=0.5):
+def update_ema(ema_model, model, decay=0.9999):
     """
     Step the EMA model towards the current model.
     """
