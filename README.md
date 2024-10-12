@@ -11,7 +11,7 @@
 
 **News**:
 
-- [10/13] MonoFormer now supports **interleaved multi-modal data** and **multi-image inputs and outputs** for both **image understanding and generation**. The legacy single-image generation codebase has been moved to the [single-image branch]().
+- [10/13] MonoFormer now supports **interleaved multi-modal data** and **multi-image inputs and outputs** for both **image understanding and generation**. The legacy single-image generation codebase has been moved to the [single-image branch](https://github.com/MonoFormer/MonoFormer/tree/single_image).
 - [9/25] We released the model weights for class-conditional generation on ImageNet.
 - [9/24] We released the training code and inference code.
 - [9/24] We released **MonoFormer: One Transformer for Both Diffusion and Autoregression**. Checkout our [paper](https://arxiv.org/pdf/2409.16280) on ArXiv.
